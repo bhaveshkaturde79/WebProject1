@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTTP Website - Cybersecurity Awareness</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f9;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #0d47a1;
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+nav {
+    background-color: #08306b;
+    text-align: center;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section {
+    background: white;
+    margin: 20px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #0d47a1;
+}
+
+img {
+    display: block;
+    margin: 20px auto;
+    width: 60%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+.video-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+iframe {
+    width: 80%;
+    max-width: 700px;
+    height: 400px;
+    border-radius: 10px;
+}
+
+ul, ol {
+    margin-left: 20px;
+}
+
+button {
+    padding: 12px 20px;
+    background: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #b71c1c;
+}
+
+footer {
+    background-color: #0d47a1;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* Quiz Styles */
+.quiz label.correct { color: green; font-weight: bold; }
+.quiz label.wrong { color: red; font-weight: bold; }
+.quiz button { margin-top: 15px; }
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Cybersecurity Awareness Website</h1>
+<p><strong>Understanding HTTP & Why You Should Not Click Unknown Links</strong></p>
+</header>
+
+<nav>
+<a href="#about">About</a>
+<a href="#httpvshttps">HTTP vs HTTPS</a>
+<a href="#threats">Threats</a>
+<a href="#examples">Examples</a>
+<a href="#protection">Protection</a>
+<a href="#video">Video</a>
+<a href="#quiz">Quiz</a>
+</nav>
+
+<section id="about">
+<h2>📘 What is HTTP?</h2>
+<p>HTTP (HyperText Transfer Protocol) is the foundation of data communication on the web. It is used to transfer web pages from a server to your browser. When you type a website starting with <strong>http://</strong>, it means the data is transferred without encryption.</p>
+<p>Because HTTP does not encrypt data, hackers can intercept sensitive information like passwords, credit card numbers, and personal details.</p>
+<img src="https://images.unsplash.com/photo-1584433144859-1fc3ab64a957?auto=format&fit=crop&w=1200&q=80" alt="HTTP website concept">
+</section>
+
+<section id="httpvshttps">
+<h2>🔐 HTTP vs HTTPS</h2>
+<ul>
+<li><strong>HTTP:</strong> Data is not encrypted. Less secure.</li>
+<li><strong>HTTPS:</strong> Data is encrypted using SSL/TLS. More secure.</li>
+<li>HTTPS protects users from eavesdropping and data tampering.</li>
+<li>Always check for the padlock icon in the browser.</li>
+</ul>
+<img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1200&q=80" alt="HTTPS security lock">
+</section>
+
+<section id="threats">
+<h2>⚠ Why You Should Not Click Unknown Links</h2>
+<ul>
+<li>Fake banking websites</li>
+<li>Phishing login pages</li>
+<li>Malware downloads</li>
+<li>Ransomware attacks</li>
+<li>Identity theft</li>
+</ul>
+<img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80" alt="Phishing email example">
+</section>
+
+<section id="examples">
+<h2>🌍 Real World Cyber Attack Examples</h2>
+<p>Many major cyber attacks start with a simple phishing email. Attackers disguise links to look like trusted companies such as banks, delivery services, or social media platforms.</p>
+<p>Once clicked, the victim may unknowingly provide confidential information. Businesses lose billions of dollars every year due to phishing and online scams.</p>
+<img src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=1200&q=80" alt="Cyber hacker concept">
+</section>
+
+<section id="protection">
+<h2>🛡 How to Protect Yourself</h2>
+<ul>
+<li>Always verify the website URL.</li>
+<li>Look for HTTPS instead of HTTP.</li>
+<li>Never click suspicious email links.</li>
+<li>Enable Two-Factor Authentication (2FA).</li>
+<li>Install antivirus software.</li>
+<li>Keep your browser and system updated.</li>
+</ul>
+</section>
+
+<section id="video">
+<h2>🎥 Educational Video on Cybersecurity</h2>
+<div class="video-container">
+<iframe src="https://www.youtube.com/embed/inWWhr5tnEA" title="Cybersecurity Awareness Video" frameborder="0" allowfullscreen></iframe>
+</div>
+</section>
+
+<section>
+<h2>🚨 What To Do If You Clicked a Suspicious Link</h2>
+<ol>
+<li>Disconnect from the internet immediately.</li>
+<li>Run a full antivirus scan.</li>
+<li>Change your passwords.</li>
+<li>Inform your bank if financial details were entered.</li>
+<li>Report the phishing attempt.</li>
+</ol>
+</section>
+
+<!-- QUIZ SECTION -->
+<section id="quiz" class="quiz">
+<h2>📝 Cybersecurity Quiz</h2>
+<div id="quiz-container"></div>
+<button id="submit-quiz">Submit Answers</button>
+<h3 id="result"></h3>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  const quizData = [
+    { question: "1. What does HTTP lack compared to HTTPS?", options:["Encryption","Speed","Images"], answer:0 },
+    { question: "2. Clicking unknown links can lead to?", options:["Malware infection","Faster internet","Better security"], answer:0 },
+    { question: "3. What is phishing?", options:["Fake attempts to steal data","Browser update","New email"], answer:0 },
+    { question: "4. HTTPS provides?", options:["Encryption and authentication","Virus protection","Faster browsing"], answer:0 },
+    { question: "5. Ransomware typically?", options:["Encrypts files and demands ransom","Deletes emails","Improves download speed"], answer:0 },
+    { question: "6. Should you trust unknown email links?", options:["Yes","No","Sometimes"], answer:1 },
+    { question: "7. Two-Factor Authentication (2FA) helps with?", options:["Account security","Email spam","Download speed"], answer:0 },
+    { question: "8. Hovering over a link shows?", options:["The real URL","The website content","Nothing"], answer:0 },
+    { question: "9. HTTPS is indicated by?", options:["Padlock icon in browser","Bold text","Red color"], answer:0 },
+    { question: "10. Why is cybersecurity important?", options:["Protect personal and financial data","Ignore emails","Improve internet speed"], answer:0 }
+  ];
+
+  const quizContainer = document.getElementById("quiz-container");
+
+  quizData.forEach((q,index)=>{
+    const qDiv = document.createElement("div");
+    qDiv.classList.add("question");
+
+    let optionsHTML = "";
+    q.options.forEach((option,i)=>{
+      optionsHTML += `<label><input type="radio" name="question${index}" value="${i}"> ${option}</label><br>`;
+    });
+
+    qDiv.innerHTML = `<p><b>${q.question}</b></p>${optionsHTML}<br>`;
+    quizContainer.appendChild(qDiv);
+  });
+
+  document.getElementById("submit-quiz").addEventListener("click", ()=>{
+    let score = 0;
+
+    quizData.forEach((q,index)=>{
+      const selected = document.querySelector(`input[name="question${index}"]:checked`);
+      const options = document.getElementsByName(`question${index}`);
+
+      options.forEach((opt,i)=>{
+        const label = opt.parentElement;
+        label.classList.remove("correct","wrong");
+
+        if(i === q.answer) label.classList.add("correct");
+        if(opt.checked && i !== q.answer) label.classList.add("wrong");
+      });
+
+      if(selected && parseInt(selected.value) === q.answer){
+        score++;
+      }
+    });
+
+    document.getElementById("result").innerHTML =
+      "Your Score: " + score + " / " + quizData.length;
+  });
+
+});
+</script>
+</section>
+
+<footer>
+<p>© 2026 Cybersecurity Awareness Project | Stay Safe Online 🔐</p>
+</footer>
+
+</body>
+</html>

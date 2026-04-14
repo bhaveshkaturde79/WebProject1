@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cybersecurity Awareness - Do Not Click Unknown Links</title>
+
+<style>
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #eef2f7;
+}
+
+header {
+    background: linear-gradient(90deg, #0d47a1, #1976d2);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+nav {
+    background: #08306b;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section {
+    margin: 20px;
+    padding: 25px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #0d47a1;
+}
+
+img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    margin-top: 15px;
+    display: block;
+    margin: 20px auto;
+}
+
+.video-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+iframe {
+    width: 90%;
+    max-width: 700px;
+    height: 400px;
+    border-radius: 10px;
+}
+
+button {
+    padding: 12px 20px;
+    background: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #b71c1c;
+}
+
+footer {
+    background: #0d47a1;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Quiz Styles */
+.quiz label.correct { color: green; font-weight: bold; }
+.quiz label.wrong { color: red; font-weight: bold; }
+.quiz button { margin-top: 15px; }
+</style>
+
+<script>
+function showWarning() {
+    alert("⚠ Warning! Always verify links before clicking. Cybercriminals disguise malicious links as trusted sources.");
+}
+</script>
+
+</head>
+<body>
+
+<header>
+<h1>Cybersecurity Awareness</h1>
+<p><strong>Protect Yourself: Do Not Click Unknown Links</strong></p>
+</header>
+
+<nav>
+<a href="#about">About</a>
+<a href="#threats">Threats</a>
+<a href="#examples">Real Examples</a>
+<a href="#protection">Protection</a>
+<a href="#video">Video</a>
+<a href="#quiz">Quiz</a>
+</nav>
+
+<section id="about">
+<h2>📌 Introduction to Cybersecurity</h2>
+<p>
+Cybersecurity is the practice of protecting systems, networks, and data from digital attacks.
+One of the most common attack methods is malicious links sent via email, SMS, or social media.
+Attackers use psychological manipulation (social engineering) to trick users into clicking.
+</p>
+<img src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=1200&q=80"
+     alt="Phishing email warning concept">
+</section>
+
+<section id="threats">
+<h2>⚠ Types of Link-Based Threats</h2>
+<h3>1. Phishing Attacks</h3>
+<p>Fake emails pretending to be from banks, delivery services, or social media platforms. They redirect you to fake login pages to steal credentials.</p>
+
+<h3>2. Malware Distribution</h3>
+<p>Clicking a link may automatically download malicious software like viruses, spyware, trojans, or ransomware.</p>
+
+<h3>3. Ransomware</h3>
+<p>Ransomware encrypts your files and demands payment to restore access. Many ransomware attacks begin with malicious email links.</p>
+
+<h3>4. Identity Theft</h3>
+<p>Attackers collect personal data such as passwords, credit card numbers, and government IDs for fraud.</p>
+
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+     alt="Cyber attack hacker concept">
+</section>
+
+<section id="examples">
+<h2>🌍 Real-World Examples</h2>
+<ul>
+<li>Email pretending to be from a bank asking to "verify your account."</li>
+<li>SMS claiming you won a lottery prize.</li>
+<li>Fake courier message asking to track a package.</li>
+<li>Social media message with “shocking video” link.</li>
+</ul>
+
+<p>According to cybersecurity research, phishing remains one of the top causes of data breaches worldwide. Businesses lose billions of dollars annually due to phishing and ransomware attacks.</p>
+</section>
+
+<img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80"
+     alt="Online security lock concept">
+
+<section id="protection">
+<h2>🛡 How to Protect Yourself</h2>
+<ul>
+<li>Check the sender's email carefully.</li>
+<li>Hover over links to preview the real URL.</li>
+<li>Use antivirus and firewall protection.</li>
+<li>Enable Two-Factor Authentication (2FA).</li>
+<li>Keep your operating system updated.</li>
+<li>Never enter credentials on suspicious websites.</li>
+</ul>
+
+<br>
+<button onclick="showWarning()">Click for Security Reminder</button>
+</section>
+
+<section id="video">
+<h2>🎥 Cybersecurity Awareness Video</h2>
+<div class="video-container">
+<iframe src="https://www.youtube.com/embed/inWWhr5tnEA"
+title="Cybersecurity Awareness"
+frameborder="0"
+allowfullscreen>
+</iframe>
+</div>
+</section>
+
+<section>
+<h2>🚨 What To Do If You Clicked a Malicious Link</h2>
+<ol>
+<li>Disconnect from the internet immediately.</li>
+<li>Run a full system antivirus scan.</li>
+<li>Change all passwords from a secure device.</li>
+<li>Inform your bank if financial data was entered.</li>
+<li>Report the phishing attempt to cybersecurity authorities.</li>
+</ol>
+</section>
+
+<!-- QUIZ SECTION -->
+<section id="quiz" class="quiz">
+<h2>📝 Cybersecurity Quiz</h2>
+<div id="quiz-container"></div>
+<button id="submit-quiz">Submit Answers</button>
+<h3 id="result"></h3>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  const quizData = [
+    { question: "1. What is the main threat of clicking unknown links?", options:["Faster internet","Malware and phishing","Better security"], answer:1 },
+    { question: "2. How can you check a link before clicking?", options:["Hover over it to see the URL","Click immediately","Ignore it"], answer:0 },
+    { question: "3. What is phishing?", options:["A harmless prank","Fraudulent attempt to steal data","A software update"], answer:1 },
+    { question: "4. Which security measure protects against malicious links?", options:["Antivirus software","Ignoring updates","Sharing passwords"], answer:0 },
+    { question: "5. What does ransomware do?", options:["Encrypts files and demands ransom","Deletes your browser","Slows internet speed"], answer:0 },
+    { question: "6. Should you provide credentials to unknown websites?", options:["Yes","No","Only if it looks safe"], answer:1 },
+    { question: "7. Which authentication improves security?", options:["Two-Factor Authentication (2FA)","Single password","No password"], answer:0 },
+    { question: "8. What to do if you suspect a link is malicious?", options:["Click to test","Report and disconnect","Share with friends"], answer:1 },
+    { question: "9. Hovering over a link helps you to?", options:["Preview the real URL","Install software","Change settings"], answer:0 },
+    { question: "10. Why is cybersecurity important?", options:["Protect personal and financial data","Ignore emails","Improve download speed"], answer:0 }
+  ];
+
+  const quizContainer = document.getElementById("quiz-container");
+
+  // Render quiz
+  quizData.forEach((q,index)=>{
+    const qDiv = document.createElement("div");
+    qDiv.classList.add("question");
+
+    let optionsHTML = "";
+    q.options.forEach((option,i)=>{
+      optionsHTML += `<label><input type="radio" name="question${index}" value="${i}"> ${option}</label><br>`;
+    });
+
+    qDiv.innerHTML = `<p><b>${q.question}</b></p>${optionsHTML}<br>`;
+    quizContainer.appendChild(qDiv);
+  });
+
+  // Submit quiz
+  document.getElementById("submit-quiz").addEventListener("click", ()=>{
+    let score = 0;
+
+    quizData.forEach((q,index)=>{
+      const selected = document.querySelector(`input[name="question${index}"]:checked`);
+      const options = document.getElementsByName(`question${index}`);
+
+      options.forEach((opt,i)=>{
+        const label = opt.parentElement;
+        label.classList.remove("correct","wrong");
+
+        if(i === q.answer) label.classList.add("correct");
+        if(opt.checked && i !== q.answer) label.classList.add("wrong");
+      });
+
+      if(selected && parseInt(selected.value) === q.answer){
+        score++;
+      }
+    });
+
+    document.getElementById("result").innerHTML =
+      "Your Score: " + score + " / " + quizData.length;
+  });
+
+});
+</script>
+</section>
+
+<footer>
+<p>© 2026 Cybersecurity Awareness Project | Stay Safe Online 🔐</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zero-Day Exploit - Cyber Security Awareness</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #061b2b;
+            color: white;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #001f3f;
+            text-align: center;
+            padding: 30px;
+        }
+
+        header h1 {
+            color: #00e0ff;
+        }
+
+        nav {
+            background: black;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 10px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            background-color: #002b5c;
+            padding: 8px 15px;
+            border-radius: 6px;
+            border: 1px solid #00e0ff;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #00e0ff;
+            color: black;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px;
+        }
+
+        h2 {
+            color: #00e0ff;
+            margin-top: 40px;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .quiz-container {
+            background-color: #001f3f;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        button {
+            background-color: #00e0ff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #0099aa;
+        }
+
+        #result {
+            font-weight: bold;
+            margin-top: 15px;
+            font-size: 18px;
+        }
+
+        footer {
+            background-color: #001f3f;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Zero-Day Exploit</h1>
+</header>
+
+<nav>
+    <a href="/homepage">Home</a>
+    <a href="/attacks">Cyber Attacks</a>
+    <a href="/safe-browsing">Safe Browsing</a>
+    
+</nav>
+
+<div class="container">
+
+    <h2>1. What is a Zero-Day Exploit?</h2>
+    <p>
+        A Zero-Day Exploit is a cyberattack that targets a software vulnerability 
+        that is unknown to the software vendor or developer.
+        Because the vulnerability is unknown, there is no patch or fix available —
+        meaning defenders have "zero days" to prepare.
+    </p>
+
+    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475"
+         alt="Zero-Day exploit cybersecurity concept image">
+
+    <h2>2. Why is it Called Zero-Day?</h2>
+    <p>
+        The term “zero-day” refers to the number of days the vendor has known about 
+        the vulnerability. Since it is undiscovered, the vendor has had zero days 
+        to fix the flaw before it is exploited.
+    </p>
+
+    <h2>3. How Zero-Day Attacks Work</h2>
+    <ol>
+        <li>Attacker discovers a software vulnerability.</li>
+        <li>The vendor is unaware of the flaw.</li>
+        <li>The attacker creates an exploit.</li>
+        <li>The exploit is used to attack systems before patch release.</li>
+    </ol>
+
+    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b"
+         alt="Software vulnerability hacking concept">
+
+    <h2>4. Real-World Examples</h2>
+    <ul>
+        <li>Microsoft Windows zero-day vulnerabilities</li>
+        <li>Google Chrome zero-day exploit</li>
+        <li>Adobe Flash Player zero-day attacks</li>
+    </ul>
+
+    <p>
+        Many ransomware and spyware attacks begin with zero-day exploits.
+    </p>
+
+   <img src="https://images.unsplash.com/photo-1548095115-45697e705a32?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+     alt="Hacker exploiting system vulnerability">
+
+
+    <h2>5. Impact of Zero-Day Exploits</h2>
+    <ul>
+        <li>Data breaches</li>
+        <li>System takeover</li>
+        <li>Financial loss</li>
+        <li>Government cyber espionage</li>
+        <li>Mass malware spread</li>
+    </ul>
+
+    <h2>6. How to Prevent Zero-Day Attacks</h2>
+    <ul>
+        <li>Keep systems updated regularly</li>
+        <li>Use advanced antivirus and endpoint detection</li>
+        <li>Enable firewall protection</li>
+        <li>Use intrusion detection systems (IDS)</li>
+        <li>Apply least privilege principle</li>
+    </ul>
+
+    <h2>7. Watch Video Explanation</h2>
+
+    <iframe src="https://www.youtube.com/embed/0a6U6y7F6O0"
+            title="Zero Day Exploit Explanation"
+            allowfullscreen>
+    </iframe>
+
+    <h2>8. Test Your Knowledge (Quiz)</h2>
+
+    <div class="quiz-container">
+        <form id="quizForm">
+
+            <p>1. A Zero-Day exploit targets:</p>
+            <input type="radio" name="q1" value="a"> Known patched vulnerability<br>
+            <input type="radio" name="q1" value="b"> Unknown vulnerability<br><br>
+
+            <p>2. Why is it dangerous?</p>
+            <input type="radio" name="q2" value="a"> No fix available<br>
+            <input type="radio" name="q2" value="b"> Easy to detect<br><br>
+
+            <p>3. Zero-Day attacks can cause:</p>
+            <input type="radio" name="q3" value="a"> Data breach<br>
+            <input type="radio" name="q3" value="b"> Faster internet<br><br>
+
+            <button type="button" onclick="checkQuiz()">Submit Quiz</button>
+
+            <p id="result"></p>
+        </form>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Cyber Security Awareness Website
+</footer>
+
+<script>
+function checkQuiz() {
+
+    let score = 0;
+    const answers = {
+        q1: "b",
+        q2: "a",
+        q3: "a"
+    };
+
+    const form = document.forms["quizForm"];
+
+    for (let q in answers) {
+        if (form[q].value === answers[q]) {
+            score++;
+        }
+    }
+
+    const result = document.getElementById("result");
+    result.innerHTML = "Your Score: " + score + " / 3";
+
+    if (score === 3) {
+        result.style.color = "lightgreen";
+        result.innerHTML += " 🎉 Excellent!";
+    } else {
+        result.style.color = "orange";
+        result.innerHTML += " 👍 Keep Learning!";
+    }
+}
+</script>
+
+</body>
+</html>

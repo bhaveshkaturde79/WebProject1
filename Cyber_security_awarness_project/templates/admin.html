@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin - Reports</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #e0f7ff; padding: 20px; }
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+        th { background-color: #0288d1; color: white; }
+        tr:nth-child(even) { background-color: #f0faff; }
+        tr:hover { background-color: #b3e5fc; }
+    </style>
+</head>
+<body>
+    <h2>Submitted Reports</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Message</th>
+            <th>Date</th>
+        </tr>
+        {% for report in reports %}
+        <tr>
+            <td>{{ report[0] }}</td>
+            <td>{{ report[1] }}</td>
+            <td>{{ report[2] }}</td>
+            <td>{{ report[3] }}</td>
+            <td>{{ report[4] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF‑8">
+<meta name="viewport" content="width=device‑width, initial‑scale=1.0">
+<title>WannaCry Ransomware Attack – Cybersecurity Awareness</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eef5fa;
+    line-height: 1.7;
+}
+header {
+    background: #102a54;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+section {
+    max-width: 900px;
+    margin: 30px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+h2 {
+    color: #102a54;
+}
+img {
+    width: 100%;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+iframe {
+    width: 100%;
+    height: 400px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+a {
+    color: #1a5fb4;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.quiz {
+    background: #dbeaff;
+    padding: 20px;
+    border-radius: 8px;
+}
+button {
+    padding: 10px 18px;
+    background: #1a5fb4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background: #0d3b70;
+}
+footer {
+    text-align: center;
+    padding: 18px;
+    background: #102a54;
+    color: white;
+}
+</style>
+
+<script>
+function checkQuiz() {
+    let score = 0;
+    if(document.querySelector('input[name="q1"]:checked')?.value === "b") score++;
+    if(document.querySelector('input[name="q2"]:checked')?.value === "a") score++;
+    if(document.querySelector('input[name="q3"]:checked')?.value === "c") score++;
+    document.getElementById("result").innerText = "Your Score: " + score + "/3";
+}
+</script>
+
+</head>
+<body>
+
+<header>
+<h1>🦠 WannaCry Ransomware Attack</h1>
+<p>One of the most significant cyberattacks in history</p>
+</header>
+
+<section>
+<h2>📌 What Was WannaCry?</h2>
+<p>
+WannaCry was a massive ransomware attack that spread worldwide in May 2017 using malware that encrypted files on Windows computers and demanded ransom payments in Bitcoin. It spread rapidly by exploiting a vulnerability in Microsoft Windows called “EternalBlue”, which had been leaked from the U.S. National Security Agency. :contentReference[oaicite:0]{index=0}
+</p>
+
+<h3>📊 Diagram: How a Ransomware Attack Works</h3>
+<img src="https://images.unsplash.com/photo-1587202372775-7c2a60d2adfa" alt="Ransomware conceptual image">
+
+<h3>🎥 Video Explanation</h3>
+<iframe src="https://www.youtube.com/embed/cZ543_0bjbw" allowfullscreen></iframe>
+
+<h3>🔗 Learn More</h3>
+<p>
+See a detailed overview of ransomware and how it spreads at 
+<a href="https://en.wikipedia.org/wiki/WannaCry_ransomware_attack" target="_blank">Wikipedia – WannaCry Ransomware Attack</a>. :contentReference[oaicite:1]{index=1}
+</p>
+</section>
+
+<section>
+<h2>🌍 How Did It Spread?</h2>
+<p>
+WannaCry used a worm‑like mechanism that allowed it to jump between computers connected on the same network without user interaction. It targeted the Windows Server Message Block (SMB) protocol vulnerability, which was patched by Microsoft — but many systems hadn’t installed the security update yet. :contentReference[oaicite:2]{index=2}
+</p>
+
+<h3>📊 Infection Illustration</h3>
+<img src="https://images.unsplash.com/photo-1590608897129-79f29515bc3a" alt="Network infection illustration">
+</section>
+
+<section>
+<h2>⚠️ Global Impact</h2>
+<p>
+WannaCry affected an estimated **300,000+ computers in over 150 countries**, causing widespread disruption across healthcare, government, businesses, and education sectors. :contentReference[oaicite:3]{index=3}  
+One of the most publicised victims was the **National Health Service (NHS)** in the UK, where many systems were infected, leading to appointment cancellations and operational delays. :contentReference[oaicite:4]{index=4}  
+Estimated economic damage from disruption and recovery is in the **billions of dollars**. :contentReference[oaicite:5]{index=5}
+</p>
+</section>
+
+<section>
+<h2>🛡️ Why This Attack Mattered</h2>
+<ul>
+<li>✅ It showed how quickly ransomware can spread across networks and borders.</li>
+<li>✅ It exposed risks from unpatched systems still in use.</li>
+<li>✅ It focused global attention on cybersecurity preparedness and patch management.</li>
+<li>✅ Many organizations lacked up‑to‑date backups, increasing ransom pressure.</li>
+</ul>
+</section>
+
+<section>
+<h2>🛠️ How to Protect Against Ransomware</h2>
+<ul>
+<li>✔ Keep software and operating systems fully updated with the latest patches. :contentReference[oaicite:6]{index=6}</li>
+<li>✔ Back up important files regularly and keep backups offline or in secure cloud storage. :contentReference[oaicite:7]{index=7}</li>
+<li>✔ Use reputable security software with real‑time protection. :contentReference[oaicite:8]{index=8}</li>
+<li>✔ Be cautious with email attachments and links from unknown senders. :contentReference[oaicite:9]{index=9}</li>
+<li>✔ Disable unneeded services such as outdated SMB protocols. :contentReference[oaicite:10]{index=10}</li>
+</ul>
+</section>
+
+<!-- QUIZ -->
+<section class="quiz">
+<h2>📝 WannaCry Ransomware Quiz</h2>
+
+<div id="quiz-container"></div>
+
+<button id="submit-quiz">Submit Answers</button>
+
+<h3 id="result"></h3>
+
+<style>
+.correct {
+    color: green;
+    font-weight: bold;
+}
+.wrong {
+    color: red;
+    font-weight: bold;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  const quizData = [
+    { question: "1. What did the WannaCry ransomware primarily do?", options:["Access email accounts","Encrypt computer files and demand ransom","Steal credit card numbers"], answer:1 },
+    { question: "2. Which vulnerability did WannaCry exploit?", options:["EternalBlue in Windows","iOS Mail Bug","Wi‑Fi password leak"], answer:0 },
+    { question: "3. What is the best defence against ransomware?", options:["Ignore it","Pay the ransom immediately","Regular updates and backups"], answer:2 },
+    { question: "4. In which year did WannaCry outbreak occur?", options:["2017","2015","2019"], answer:0 },
+    { question: "5. WannaCry affected which major sector?", options:["Healthcare (e.g., NHS)","Education only","Gaming industry"], answer:0 },
+    { question: "6. What type of malware is WannaCry?", options:["Ransomware","Spyware","Adware"], answer:0 },
+    { question: "7. Which OS was primarily affected?", options:["Windows","macOS","Linux"], answer:0 },
+    { question: "8. How did WannaCry spread?", options:["Network exploit and phishing emails","USB drives only","Social media messages"], answer:0 },
+    { question: "9. What should users do after infection?", options:["Restore from backup and update systems","Ignore it","Share infected files"], answer:0 },
+    { question: "10. What is a preventive measure against ransomware?", options:["Keep software updated and backup data regularly","Use default passwords","Disable antivirus"], answer:0 }
+  ];
+
+  const quizContainer = document.getElementById("quiz-container");
+
+  // Render quiz
+  quizData.forEach((q,index)=>{
+    const qDiv = document.createElement("div");
+    qDiv.classList.add("question");
+
+    let optionsHTML = "";
+    q.options.forEach((option,i)=>{
+      optionsHTML += `<label><input type="radio" name="question${index}" value="${i}"> ${option}</label><br>`;
+    });
+
+    qDiv.innerHTML = `<p><b>${q.question}</b></p>${optionsHTML}<br>`;
+    quizContainer.appendChild(qDiv);
+  });
+
+  // Submit quiz
+  document.getElementById("submit-quiz").addEventListener("click", ()=>{
+    let score = 0;
+
+    quizData.forEach((q,index)=>{
+      const selected = document.querySelector(`input[name="question${index}"]:checked`);
+      const options = document.getElementsByName(`question${index}`);
+
+      options.forEach((opt,i)=>{
+        const label = opt.parentElement;
+        label.classList.remove("correct","wrong");
+
+        if(i === q.answer) label.classList.add("correct");
+        if(opt.checked && i !== q.answer) label.classList.add("wrong");
+      });
+
+      if(selected && parseInt(selected.value) === q.answer){
+        score++;
+      }
+    });
+
+    document.getElementById("result").innerHTML =
+      "Your Score: " + score + " / " + quizData.length;
+  });
+
+});
+</script>
+
+<footer>
+<p>© 2026 Cyber Security Awareness | Stay Safe Online</p>
+</footer>
+
+</body>
+</html>

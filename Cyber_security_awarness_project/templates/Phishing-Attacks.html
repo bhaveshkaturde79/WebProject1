@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+function searchContent() {
+    let input = document.getElementById("searchInput").value.toLowerCase();
+    let bodyText = document.body.innerHTML;
+
+    // Remove old highlights
+    bodyText = bodyText.replace(/<mark>/g, "").replace(/<\/mark>/g, "");
+
+    if (input === "") {
+        alert("Please enter a keyword to search");
+        return;
+    }
+
+    // Highlight searched word
+    let regex = new RegExp(input, "gi");
+    document.body.innerHTML = bodyText.replace(regex, match => `<mark>${match}</mark>`);
+
+    // Scroll to first match
+    let firstMatch = document.querySelector("mark");
+    if (firstMatch) {
+        firstMatch.scrollIntoView({ behavior: "smooth" });
+    } else {
+        alert("No result found!");
+    }
+}
+</script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0f172a;
+            color: #ffffff;
+        }
+
+        header {
+            background-color: #020617;
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+            color: #38bdf8;
+        }
+
+        .container {
+            width: 85%;
+            margin: 30px auto;
+            background-color: #020617;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #38bdf8;
+            margin-top: 30px;
+        }
+
+        p {
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .tip-box {
+            background: #020617;
+            border-left: 5px solid #38bdf8;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #020617;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+        button {
+  background: #005C97;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+ body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0d1b2a;
+            color: white;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #1b263b;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #00b4d8;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        img {
+            width: 100%;
+            max-width: 600px;
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+        }
+
+        iframe {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        footer {
+            background: #1b263b;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+
+        .highlight {
+            color: #ff4d6d;
+            font-weight: bold;
+        }
+.navbar {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+}
+
+.logout-btn {
+    text-decoration: none;
+    background-color: red;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+ nav {
+            background: black;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 10px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            background-color: #002b5c;
+            padding: 8px 15px;
+            border-radius: 6px;
+            border: 1px solid #00cfff;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #00cfff;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <a href="/awareness" class="logout-btn">Logout</a>
+</nav>
+<nav>
+    <a href="/homepage">Home</a>
+    <a href="/attacks">Cyber Attacks</a>
+    <a href="/safe-browsing">Safe Browsing</a>
+    <a href="/quiz">Start Quiz</a>
+</nav>
+
+
+<div style="text-align:center; margin:20px;">
+    <input type="text" id="searchInput" placeholder="Search phishing topic..."
+           style="width:60%; padding:10px; border-radius:5px; border:none;">
+    <button onclick="searchContent()"
+            style="padding:10px 20px; margin-left:10px; background:#38bdf8; border:none; border-radius:5px; font-weight:bold;">
+        Search
+    </button>
+</div>
+
+<div class="container">
+
+    <h2>What is a Phishing Attack?</h2>
+    
+    <p>
+        Phishing is a type of cyber attack where attackers trick users into revealing
+        sensitive information such as usernames, passwords, credit card details, or OTPs.
+        These attacks usually occur through fake emails, messages, or websites that look
+        like they come from trusted sources.
+    </p>
+
+    <h2>How Phishing Attacks Work</h2>
+    
+    <p>
+        In a phishing attack, the attacker sends a fraudulent message that appears to be from
+        a legitimate organization. The message contains a malicious link or attachment.
+        Once the user clicks the link and enters their information, the attacker steals it.
+    </p>
+
+    
+    <!-- Image 1 -->
+    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3" 
+         alt="Phishing email concept image">
+
+    <h2>Types of Phishing Attacks</h2>
+
+    <!-- Email Phishing -->
+    <div class="phishing-type">
+        <h3>Email Phishing</h3>
+        <p>Fake emails pretending to be from trusted companies asking for sensitive information.</p>
+        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d" 
+             alt="Email phishing example">
+    </div>
+
+    <!-- Spear Phishing -->
+    <div class="phishing-type">
+        <h3>Spear Phishing</h3>
+        <p>Targeted phishing attack aimed at a specific individual or organization.</p>
+        <img src="https://images.unsplash.com/photo-1510519138101-570d1dca3d66" 
+             alt="Spear phishing concept">
+    </div>
+
+    <!-- Smishing -->
+    <div class="phishing-type">
+        <h3>Smishing (SMS Phishing)</h3>
+        <p>Fraudulent text messages designed to trick users into clicking malicious links.</p>
+        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9" 
+             alt="Smishing text message example">
+    </div>
+
+    <!-- Vishing -->
+    <div class="phishing-type">
+        <h3>Vishing (Voice Phishing)</h3>
+        <p>Scam phone calls pretending to be from banks or government agencies.</p>
+        <img src="https://images.unsplash.com/photo-1584438784894-089d6a62b8fa" 
+             alt="Vishing phone scam concept">
+    </div>
+
+    <!-- Clone Phishing -->
+    <div class="phishing-type">
+        <h3>Clone Phishing</h3>
+        <p>A legitimate email is copied and resent with malicious links or attachments.</p>
+        <img src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72" 
+             alt="Clone phishing email concept">
+    </div>
+
+    <h2>Phishing Awareness Video</h2>
+
+    <iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/8dXnZV0pH2A" 
+        title="Phishing Awareness Video" 
+        frameborder="0" 
+        allowfullscreen>
+    </iframe>
+
+    <h2>Signs of a Phishing Attack</h2>
+    <ul>
+        <li>Urgent or threatening messages</li>
+        <li>Suspicious email addresses or phone numbers</li>
+        <li>Spelling and grammatical mistakes</li>
+        <li>Unknown links or attachments</li>
+        <li>Requests for personal or financial information</li>
+    </ul>
+     <!-- Image 2 -->
+    <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296" 
+         alt="Cybersecurity hacker concept">
+    <h2>How to Protect Yourself from Phishing</h2>
+    <div class="tip-box">
+        <ul>
+            <li>Never click on unknown or suspicious links</li>
+            <li>Verify sender email addresses carefully</li>
+            <li>Do not share OTPs or passwords with anyone</li>
+            <li>Enable Two-Factor Authentication (2FA)</li>
+            <li>Use updated antivirus software</li>
+        </ul>
+    </div>
+    
+    <!-- YouTube Video Embed -->
+    <iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/8dXnZV0pH2A" 
+        title="Phishing Awareness Video" 
+        frameborder="0" 
+        allowfullscreen>
+    </iframe>
+    <h2>Real-Life Example</h2>
+    <p>
+        A user receives an email claiming their bank account will be blocked.
+        The email asks them to click a link and verify details.
+        The link leads to a fake website that steals login credentials.
+    </p>
+    <a href="https://en.wikipedia.org/wiki/Phishing">https://en.wikipedia.org/wiki/Phishing</a><br>
+    <a href="/quiz"><button>Start Quiz</button></a>
+
+</div>
+
+<footer>
+    © 2026 Cyber Security Awareness website
+</footer>
+
+</body>
+</html>

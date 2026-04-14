@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jio Data Exposure (2017 Incident) – Cyber Awareness</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eef3f7;
+    line-height: 1.6;
+}
+header {
+    background: #0a2f6b;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+section {
+    max-width: 900px;
+    margin: 30px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+h2 {
+    color: #0a2f6b;
+}
+img {
+    width: 100%;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+iframe {
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+a {
+    color: #0a2f6b;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.quiz {
+    background: #dbe9f9;
+    padding: 20px;
+    border-radius: 10px;
+}
+button {
+    padding: 10px 20px;
+    background: #0a2f6b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background: #04204a;
+}
+footer {
+    text-align: center;
+    padding: 18px;
+    background: #0a2f6b;
+    color: white;
+}
+</style>
+
+<script>
+function checkQuiz() {
+    let score = 0;
+    if(document.querySelector('input[name="q1"]:checked')?.value === "b") score++;
+    if(document.querySelector('input[name="q2"]:checked')?.value === "a") score++;
+    if(document.querySelector('input[name="q3"]:checked')?.value === "c") score++;
+
+    document.getElementById("result").innerText = "Your Score: " + score + "/3";
+}
+</script>
+
+</head>
+<body>
+
+<header>
+<h1>📶 Jio Data Exposure (2017 Report)</h1>
+<p>Understanding What Happened & How It Affects Users</p>
+</header>
+
+<!-- SECTION: Overview -->
+<section>
+<h2>🔍 What Was Reported?</h2>
+<p>
+In July 2017, several Indian news outlets reported that a website called “Magicapk” was displaying personal details of Reliance Jio customers — including names, mobile numbers, and email IDs — allegedly taken from Jio’s systems. This raised widespread concern among users about a possible **data exposure** involving millions of subscribers. :contentReference[oaicite:0]{index=0}
+</p>
+
+<h3>📊 Diagram: Data Exposure Concept</h3>
+<img src="https://images.unsplash.com/photo-1560264280-26fc2886b119" alt="Data Exposure Diagram">
+
+<h3>🎥 Video: Jio Data Exposure Explained</h3>
+<iframe src="https://www.youtube.com/embed/hz2y38FdHrA" allowfullscreen></iframe>
+
+<h3>🔗 Related Resource</h3>
+<p>
+Learn more about the incident from news coverage at  
+<a href="https://en.wikipedia.org/wiki/Jio" target="_blank">Wikipedia – Jio Data Exposure</a>. :contentReference[oaicite:1]{index=1}  
+</p>
+</section>
+
+<!-- SECTION: Facts & Official Position -->
+<section>
+<h2>📂 What Did Authorities Say?</h2>
+<p>
+Investigations revealed that a man in Rajasthan was arrested for allegedly gaining **unauthorised access** to Jio’s systems using legitimate credentials and making some subscriber data publicly searchable on a website. Police described this as unauthorised access rather than theft of data. :contentReference[oaicite:2]{index=2}
+</p>
+<p>
+Officials stated that the data did **not include highly sensitive details like Aadhaar or PAN numbers**, and Jio maintained that its systems were secure and subscriber data was protected. :contentReference[oaicite:3]{index=3}  
+</p>
+</section>
+
+<!-- SECTION: Impact -->
+<section>
+<h2>⚠️ Why It Mattered</h2>
+<p>
+Even partial exposure of user information — such as phone numbers, names and email addresses — can lead to risks like:
+<ul>
+<li>✔ Targeted phishing or spam</li>
+<li>✔ Social engineering attacks</li>
+<li>✔ Identity misuse</li>
+</ul>
+</p>
+<p>
+Although Jio insisted that much of the published information was unauthenticated, the incident highlighted the need for **stronger data protection and transparency** from large service providers. :contentReference[oaicite:4]{index=4}
+</p>
+</section>
+
+<!-- SECTION: How to Protect Yourself -->
+<section>
+<h2>🛡️ What Users Should Do</h2>
+<ul>
+<li>✔ Use unique, strong passwords for accounts</li>
+<li>✔ Enable two‑factor authentication (2FA) where possible</li>
+<li>✔ Be cautious of suspicious SMS or calls claiming to be from your telecom provider</li>
+<li>✔ Monitor your accounts for unusual activity</li>
+</ul>
+</section>
+
+<!-- QUIZ -->
+<section class="quiz">
+<h2>📝 Jio Data Exposure Quiz</h2>
+
+<div id="quiz-container"></div>
+
+<button id="submit-quiz">Submit Answers</button>
+
+<h3 id="result"></h3>
+
+<style>
+.correct {
+    color: green;
+    font-weight: bold;
+}
+.wrong {
+    color: red;
+    font-weight: bold;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  const quizData = [
+    { question: "1. What was the Jio data exposure incident mostly about?", options:["A confirmed breach of all data","Claims of partial exposure on a public website","A problem with billing"], answer:1 },
+    { question: "2. Did authorities confirm sensitive Aadhaar details were leaked?", options:["No, they said sensitive Aadhaar data wasn’t leaked","Yes, Aadhaar was fully exposed","Not sure"], answer:0 },
+    { question: "3. What’s a good step after hearing about a data exposure?", options:["Ignore it","Share your passwords with friends","Enable 2FA and monitor accounts"], answer:2 },
+    { question: "4. Who reported the Jio data exposure?", options:["Security researcher","Competitor company","Government official"], answer:0 },
+    { question: "5. How can users protect themselves after such exposures?", options:["Change passwords and enable 2FA","Post their data online","Ignore alerts"], answer:0 },
+    { question: "6. What type of data was allegedly exposed?", options:["Names, phone numbers, and emails","Bank PINs","Health records"], answer:0 },
+    { question: "7. Is it safe to click links in such news without verifying?", options:["No, verify first","Yes, always safe","Only if it’s from friends"], answer:0 },
+    { question: "8. Which of the following is a preventative measure?", options:["Use unique passwords and monitor accounts","Share passwords with apps","Disable notifications"], answer:0 },
+    { question: "9. What should you do if suspicious activity is noticed?", options:["Report to service provider","Ignore it","Delete emails only"], answer:0 },
+    { question: "10. Why is awareness about data exposures important?", options:["To prevent fraud and identity theft","To get faster services","To improve phone battery life"], answer:0 }
+  ];
+
+  const quizContainer = document.getElementById("quiz-container");
+
+  // Render quiz
+  quizData.forEach((q,index)=>{
+    const qDiv = document.createElement("div");
+    qDiv.classList.add("question");
+
+    let optionsHTML = "";
+    q.options.forEach((option,i)=>{
+      optionsHTML += `<label><input type="radio" name="question${index}" value="${i}"> ${option}</label><br>`;
+    });
+
+    qDiv.innerHTML = `<p><b>${q.question}</b></p>${optionsHTML}<br>`;
+    quizContainer.appendChild(qDiv);
+  });
+
+  // Submit quiz
+  document.getElementById("submit-quiz").addEventListener("click", ()=>{
+    let score = 0;
+
+    quizData.forEach((q,index)=>{
+      const selected = document.querySelector(`input[name="question${index}"]:checked`);
+      const options = document.getElementsByName(`question${index}`);
+
+      options.forEach((opt,i)=>{
+        const label = opt.parentElement;
+        label.classList.remove("correct","wrong");
+
+        if(i === q.answer) label.classList.add("correct");
+        if(opt.checked && i !== q.answer) label.classList.add("wrong");
+      });
+
+      if(selected && parseInt(selected.value) === q.answer){
+        score++;
+      }
+    });
+
+    document.getElementById("result").innerHTML =
+      "Your Score: " + score + " / " + quizData.length;
+
+  });
+
+});
+</script>
+
+<footer>
+<p>© 2026 Cyber Security Awareness | Learn & Stay Safe Online</p>
+</footer>
+
+</body>
+</html>

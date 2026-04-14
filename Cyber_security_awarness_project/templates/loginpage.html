@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberSecurity Awareness - Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+   
+
+</head>
+
+<body>
+    <div class="container">
+        <h2>CyberSecurity Awareness</h2>
+        <!-- <div class="login-box"> -->
+            <h3>Login</h3>
+            <form action="login" method="post">
+
+            <input type="email" name="email" id="email" placeholder="Email Address" required> <br><br>
+           
+            <input type="password" name="password" id="password" placeholder="Create Password" required> <br><br>
+            <a href="/forgot">Forgot Password?</a><br><br>
+            <p id="message" 
+   class="{% if success %}success{% elif error %}error{% endif %}">
+    {{ success or error }}
+</p>
+            <button type="submit">Login</button><br>
+           
+</p>
+             <p class="signup-text">
+                Don't have an account? <a href="{{url_for('register')}}">Sign Up</a>
+            </p>
+            {% if success %}
+<script>
+setTimeout(function(){
+    window.location.href = "/awareness";  // your next page
+}, 2000);
+</script>
+{% endif %}
+            <a href="/awareness"></a>
+           
+            
+            </form>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='static/js/login.js') }}"></script>
+</body>
+</html>
+

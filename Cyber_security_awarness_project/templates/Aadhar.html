@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF‑8">
+<meta name="viewport" content="width=device‑width, initial‑scale=1.0">
+<title>Aadhaar Data Leak & Privacy Risks</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    line-height: 1.6;
+}
+header {
+    background: #0d47a1;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+section {
+    max-width: 900px;
+    margin: 30px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+h2 {
+    color: #0d47a1;
+}
+img {
+    width: 100%;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+iframe {
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+a {
+    color: #0d47a1;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.quiz {
+    background: #e3f2fd;
+    padding: 20px;
+    border-radius: 10px;
+}
+button {
+    padding: 10px 18px;
+    background: #0d47a1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background: #08306b;
+}
+footer {
+    text-align: center;
+    padding: 18px;
+    background: #0d47a1;
+    color: white;
+}
+</style>
+
+<script>
+function checkQuiz() {
+    let score = 0;
+    if(document.querySelector('input[name="q1"]:checked')?.value === "b") score++;
+    if(document.querySelector('input[name="q2"]:checked')?.value === "a") score++;
+    if(document.querySelector('input[name="q3"]:checked')?.value === "c") score++;
+
+    document.getElementById("result").innerText = "Your Score: " + score + "/3";
+}
+</script>
+
+</head>
+<body>
+
+<header>
+<h1>🔐 Aadhaar Data Leak & Privacy Risks</h1>
+<p>Understanding Aadhaar Data Exposure and How to Protect Your Identity</p>
+</header>
+
+<!-- SECTION: WHAT IS AADHAAR -->
+<section>
+<h2>📌 What is Aadhaar?</h2>
+<p>
+Aadhaar is India’s national digital identity system issued by the Unique Identification Authority of India (UIDAI). It stores biometric and demographic details — such as photograph, name, date of birth, and fingerprints — and is used for authentication in many services.
+
+<img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=80"
+     alt="Data breach concept image" width="100%">
+</p>
+
+</section>
+
+<!-- SECTION: LEAKS VS SECURITY -->
+<section>
+<h2>🔍 Did Aadhaar Data Leak?</h2>
+<p>
+Despite multiple media reports and social commentary about Aadhaar data leaks, the UIDAI and Government of India have repeatedly stated that the **core Aadhaar database has never been breached** and remains secure with layered protections. :contentReference[oaicite:1]{index=1}
+</p>
+<p>
+However, **Aadhaar‑related personal information has at times become exposed** because of:
+<ul>
+<li>Data published by third‑party government websites without proper safeguards. :contentReference[oaicite:2]{index=2}</li>
+<li>Public availability of large lists containing Aadhaar numbers, mobile numbers, and other details extracted from external systems. :contentReference[oaicite:3]{index=3}</li>
+<li>Security weaknesses in third‑party systems holding Aadhaar data for KYC, benefits delivery, or other services. :contentReference[oaicite:4]{index=4}</li>
+</ul>
+<h3>📊 Diagram: Risk of Data Exposure</h3>
+<img src="https://images.unsplash.com/photo-1581093588401-0c7c5b6c6f13?auto=format&fit=crop&w=1000&q=80"
+     alt="Data privacy and protection concept" width="100%">
+
+</p>
+
+
+<h3>🎥 Video Explainer</h3>
+<iframe src="https://www.youtube.com/embed/DnN9lZsz2Oc" allowfullscreen></iframe>
+
+<h3>🔗 Related Resource</h3>
+<p>
+Learn more about data leaks and Aadhaar privacy:  
+<a href="https://en.wikipedia.org/wiki/Data_breaches_in_India" target="_blank">Wikipedia – Data Breaches in India</a>
+</p>
+</section>
+
+<!-- SECTION: IMPACT -->
+<section>
+<h2>⚠️ Why It Matters</h2>
+<p>
+If Aadhaar numbers or linked personal data are exposed — even outside the UIDAI database — it can lead to risks including:
+<ul>
+<li>Identity theft or impersonation</li>
+<li>Phishing and scam attempts</li>
+<li>Unauthorized access to linked accounts</li>
+<li>Targeted fraud attempts</li>
+</ul>
+<img src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=1000&q=80"
+     alt="Computer security lock concept" width="100%">
+</p>
+</section>
+
+<!-- SECTION: HOW TO PROTECT -->
+<section>
+<h2>🛡️ How to Protect Yourself</h2>
+<ul>
+<li>✔ Do not share your Aadhaar number publicly or on unsecured platforms</li>
+<li>✔ Use the UIDAI biometrics lock feature to prevent misuse</li>
+<li>✔ Only submit Aadhaar on trusted, secure websites</li>
+<li>✔ Monitor SMS and banking alerts for unusual activity</li>
+<li>✔ Lock mobile number and fingerprint access through the UIDAI portal</li>
+</ul>
+</section>
+
+<!-- QUIZ -->
+<section class="quiz">
+<h2>📝 Aadhaar Security Quiz</h2>
+
+<div id="quiz-container"></div>
+
+<button id="submit-quiz">Submit Answers</button>
+
+<h3 id="result"></h3>
+
+<style>
+.correct {
+    color: green;
+    font-weight: bold;
+}
+.wrong {
+    color: red;
+    font-weight: bold;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  const quizData = [
+    { question: "1. Has the central Aadhaar database ever been breached?", options:["Yes, often","Not according to government statements","I don’t know"], answer:1 },
+    { question: "2. Why can Aadhaar data still be exposed?", options:["Because third parties mishandle data","Government sold it","It’s random"], answer:0 },
+    { question: "3. What helps prevent misuse of biometric authentication?", options:["Sharing Aadhaar with everyone","Posting Aadhaar on public forums","Locking biometrics on the UIDAI portal"], answer:2 },
+    { question: "4. What is a safe practice for Aadhaar number?", options:["Share it on social media","Only share with trusted agencies","Send via email to friends"], answer:1 },
+    { question: "5. How can you lock your biometrics?", options:["Through UIDAI portal","By giving password to others","No need to lock"], answer:0 },
+    { question: "6. What is UIDAI?", options:["Government agency managing Aadhaar","Private company","Banking service"], answer:0 },
+    { question: "7. Why is Aadhaar misuse dangerous?", options:["Identity theft","Faster internet","Increased storage"], answer:0 },
+    { question: "8. Who should you never share Aadhaar OTP with?", options:["Strangers","Bank for verification","Authorized government portal"], answer:0 },
+    { question: "9. What should you do if Aadhaar info is leaked?", options:["Report to UIDAI","Ignore it","Share on forums"], answer:0 },
+    { question: "10. Best way to secure Aadhaar?", options:["Lock biometrics and avoid sharing","Post online for verification","Share OTP with anyone"], answer:0 }
+  ];
+
+  const quizContainer = document.getElementById("quiz-container");
+
+  // Render quiz
+  quizData.forEach((q,index)=>{
+    const qDiv = document.createElement("div");
+    qDiv.classList.add("question");
+
+    let optionsHTML = "";
+    q.options.forEach((option,i)=>{
+      optionsHTML += `<label><input type="radio" name="question${index}" value="${i}"> ${option}</label><br>`;
+    });
+
+    qDiv.innerHTML = `<p><b>${q.question}</b></p>${optionsHTML}<br>`;
+    quizContainer.appendChild(qDiv);
+  });
+
+  // Submit quiz
+  document.getElementById("submit-quiz").addEventListener("click", ()=>{
+    let score = 0;
+
+    quizData.forEach((q,index)=>{
+      const selected = document.querySelector(`input[name="question${index}"]:checked`);
+      const options = document.getElementsByName(`question${index}`);
+
+      options.forEach((opt,i)=>{
+        const label = opt.parentElement;
+        label.classList.remove("correct","wrong");
+
+        if(i === q.answer) label.classList.add("correct");
+        if(opt.checked && i !== q.answer) label.classList.add("wrong");
+      });
+
+      if(selected && parseInt(selected.value) === q.answer){
+        score++;
+      }
+    });
+
+    document.getElementById("result").innerHTML =
+      "Your Score: " + score + " / " + quizData.length;
+
+  });
+
+});
+</script>
+<footer>
+<p>© 2026 Cyber Security Awareness | Protect Your Personal Data 💡</p>
+</footer>
+
+</body>
+</html>

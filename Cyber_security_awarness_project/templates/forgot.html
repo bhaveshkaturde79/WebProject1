@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+   
+
+</head>
+
+<body>
+    <div class="container">
+<h2>Reset Password</h2>
+<form method="POST">
+<input type="email" name="email" id="email" placeholder="Email Address" required> <br><br>
+<input type="password" name="password" id="password" placeholder="Create Password" required> <br><br>
+<p id="message" class="
+    {% if success %}
+        success
+    {% elif error %}
+        error
+    {% endif %}
+">
+    {{ success or error }}
+</p>
+<button type="submit">Update</button>
+{% if success %}
+<script>
+setTimeout(function(){
+    window.location.href = "/login";
+}, 3000);
+</script>
+{% endif %}
+</form>
+</div>
+
+</body>
+</html>
+

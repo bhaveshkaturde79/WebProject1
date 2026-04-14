@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SQL Injection Attack - Cyber Security Awareness</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #061b2b;
+            color: white;
+        }
+
+        header {
+            background-color: #001f3f;
+            text-align: center;
+            padding: 30px;
+        }
+
+        header h1 {
+            color: #00cfff;
+        }
+
+        nav {
+            background: black;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 10px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            background-color: #002b5c;
+            padding: 8px 15px;
+            border-radius: 6px;
+            border: 1px solid #00cfff;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #00cfff;
+            color: black;
+        }
+
+        .container {
+            padding: 40px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #00cfff;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+      
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #001f3f;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>SQL Injection Attack</h1>
+</header>
+
+<nav>
+    <a href="/homepage">Home</a>
+    <a href="/attacks">Cyber Attacks</a>
+    <a href="/safe-browsing">Safe Browsing</a>
+    <a href="/sql-quiz">Start Quiz</a>
+</nav>
+
+<div class="container">
+
+    <h2>1. What is SQL Injection?</h2>
+    <p>
+        SQL Injection (SQLi) is a type of cyber attack where an attacker inserts 
+        malicious SQL code into input fields like login forms or search boxes 
+        to manipulate a database.
+    </p>
+
+    <p>
+        It happens when user input is not properly validated or sanitized.
+    </p>
+
+    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c"
+     alt="SQL Injection cybersecurity concept image">
+
+
+    <h2>2. How SQL Injection Works</h2>
+
+    <p>Example of vulnerable login query:</p>
+
+    <pre style="background:#000; padding:15px; border-radius:8px;">
+SELECT * FROM users 
+WHERE username = 'admin' AND password = '1234';
+    </pre>
+
+    <p>
+        If attacker enters this in password field:
+    </p>
+
+    <pre style="background:#000; padding:15px; border-radius:8px;">
+' OR '1'='1
+    </pre>
+
+    <p>
+        The query becomes:
+    </p>
+
+    <pre style="background:#000; padding:15px; border-radius:8px;">
+SELECT * FROM users 
+WHERE username = 'admin' AND password = '' OR '1'='1';
+    </pre>
+
+    <p>
+        Since '1'='1' is always true, attacker bypasses login.
+    </p>
+
+    <h2>3. Types of SQL Injection</h2>
+
+    <ul>
+        <li><strong>Authentication Bypass</strong> – Bypass login system</li>
+        <li><strong>Union-Based SQLi</strong> – Extract data using UNION query</li>
+        <li><strong>Blind SQL Injection</strong> – Get information without visible errors</li>
+        <li><strong>Error-Based SQLi</strong> – Use database error messages</li>
+    </ul>
+
+    <h2>4. Real-World Impact</h2>
+
+    <p>
+        SQL Injection can lead to:
+    </p>
+
+    <ul>
+        <li>Data theft (Passwords, Credit cards)</li>
+        <li>Data deletion</li>
+        <li>Full database access</li>
+        <li>Website takeover</li>
+    </ul>
+
+    <img src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87"
+     alt="Database hacking concept image">
+
+
+    <h2>5. How to Prevent SQL Injection</h2>
+
+    <ul>
+        <li>Use Prepared Statements (Parameterized Queries)</li>
+        <li>Use ORM frameworks</li>
+        <li>Validate and sanitize input</li>
+        <li>Use Web Application Firewall (WAF)</li>
+        <li>Limit database permissions</li>
+    </ul>
+
+    <h2>6. Watch Video Explanation</h2>
+
+    <iframe src="https://www.youtube.com/embed/_jKylhJtPmI" 
+        title="SQL Injection Tutorial"
+        allowfullscreen>
+    </iframe>
+
+</div>
+
+
+<footer>
+    © 2026 Cyber Security Awareness Website
+</footer>
+
+</body>
+</html>

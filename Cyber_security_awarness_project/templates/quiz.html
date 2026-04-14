@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Quiz - 4 Questions</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0b1a2f;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background: #081225;
+    padding: 20px;
+    text-align: center;
+    font-size: 2rem;
+    color: #00c3ff;
+}
+.container {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 30px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+h1 {
+    text-align: center;
+    color: #00e5ff;
+}
+.quiz-question {
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+    background: rgba(255 255 255 / 0.2);
+    padding: 15px 20px;
+    border-radius: 15px;
+}
+.quiz-question label {
+    display: block;
+    margin: 8px 0;
+    padding: 8px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(255 255 255 / 0.1);
+}
+.quiz-question label:hover {
+    background: rgba(0, 229, 255, 0.2);
+}
+input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+.correct {
+    background-color: #a0e6a0 !important;
+    color: #0b3d0b;
+    font-weight: 600;
+}
+.wrong {
+    background-color: #f7a0a0 !important;
+    color: #7a0b0b;
+    font-weight: 600;
+}
+#submit-quiz {
+    font-size: 1.2rem;
+    padding: 12px 26px;
+    border-radius: 25px;
+    cursor: pointer;
+    background: #00c3ff;
+    color: black;
+    border: none;
+    display: block;
+    margin: 20px auto;
+}
+#quiz-result {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.3rem;
+    text-align: center;
+}
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #081225;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #888;
+}
+</style>
+</head>
+<body>
+
+<header>Cyber Quiz</header>
+
+<div class="container">
+    <h1>Test Your Cybersecurity Knowledge</h1>
+
+    <div id="quiz-container"></div>
+
+    <button id="submit-quiz">Submit Quiz</button>
+    <div id="quiz-result"></div>
+</div>
+
+<footer>
+    © 2026 Cyber Security Awareness website
+</footer>
+
+<script>
+// Quiz data: 4 questions
+const quizData = [
+  {
+    question: "1. Phishing is?",
+    options: ["Cyber Attack", "Fishing", "Antivirus", "Firewall"],
+    answer: 0
+  },
+  {
+    question: "2. Strong password includes?",
+    options: ["Only name", "123456", "Numbers & symbols", "Only date"],
+    answer: 2
+  },
+  {
+    question: "3. Firewall is used for?",
+    options: ["Cooking", "Network Security", "Gaming", "Hacking"],
+    answer: 1
+  },
+  {
+    question: "4. HTTPS means?",
+    options: ["Secure Website", "Fast Website", "Coding Tool", "Virus"],
+    answer: 0
+  }
+];
+
+// Render quiz
+const quizContainer = document.getElementById("quiz-container");
+quizData.forEach((q, index) => {
+  const qDiv = document.createElement("div");
+  qDiv.classList.add("quiz-question");
+
+  let optionsHTML = "";
+  q.options.forEach((option, i) => {
+    optionsHTML += `
+      <label>
+        <input type="radio" name="question${index}" value="${i}"> ${option}
+      </label>`;
+  });
+
+  qDiv.innerHTML = `<strong>${q.question}</strong><br>${optionsHTML}`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit quiz
+document.getElementById("submit-quiz").addEventListener("click", () => {
+  let score = 0;
+  quizData.forEach((q, index) => {
+    const options = document.getElementsByName(`question${index}`);
+    options.forEach((opt, i) => {
+      const label = opt.parentElement;
+      label.classList.remove("correct", "wrong");
+      if (i === q.answer) {
+        label.classList.add("correct");
+      }
+      if (opt.checked && i !== q.answer) {
+        label.classList.add("wrong");
+      }
+    });
+    const selected = document.querySelector(`input[name="question${index}"]:checked`);
+    if (selected && parseInt(selected.value) === q.answer) {
+      score++;
+    }
+  });
+  document.getElementById("quiz-result").textContent = `Your Score: ${score} / ${quizData.length}`;
+  window.scrollTo({ top: document.getElementById("quiz-result").offsetTop - 50, behavior: 'smooth' });
+});
+</script>
+
+</body>
+</html>

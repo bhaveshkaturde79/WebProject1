@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enable Privacy Settings - Cyber Security Guide</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f0f4f8;
+    line-height: 1.7;
+}
+header {
+    background: #065f46;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+section {
+    max-width: 1000px;
+    margin: 30px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+h2 {
+    color: #065f46;
+}
+img {
+    width: 100%;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+iframe {
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+a {
+    color: #059669;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.quiz {
+    background: #d1fae5;
+    padding: 20px;
+    border-radius: 10px;
+}
+button {
+    padding: 10px 20px;
+    background: #059669;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background: #047857;
+}
+footer {
+    background: #065f46;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+</style>
+
+<script>
+function checkQuiz() {
+    let score = 0;
+
+    if(document.querySelector('input[name="q1"]:checked')?.value === "b") score++;
+    if(document.querySelector('input[name="q2"]:checked')?.value === "a") score++;
+    if(document.querySelector('input[name="q3"]:checked')?.value === "c") score++;
+
+    document.getElementById("result").innerHTML = "Your Score: " + score + "/3";
+}
+</script>
+</head>
+
+<body>
+
+<header>
+<h1>🛡️ Enable Privacy Settings</h1>
+<p>Protect Your Personal Data Online</p>
+</header>
+
+<!-- SECTION 1 -->
+<section>
+<h2>1️⃣ What Are Privacy Settings?</h2>
+<p>
+Privacy settings are options in apps, websites, and social media platforms that allow 
+you to control who can see your personal information, posts, and activities.
+</p>
+
+<h3>📊 Diagram: Privacy Settings Overview</h3>
+<img src="https://images.unsplash.com/photo-1581091012184-d1b8c0d8e36b" alt="Privacy Settings Diagram">
+
+<h3>🎥 Educational Video</h3>
+<iframe src="https://www.youtube.com/embed/Jd4VwNZXw6s" allowfullscreen></iframe>
+
+<h3>🔗 Learn More</h3>
+<p>
+Visit:
+<a href="https://staysafeonline.org/stay-safe-online/protect-your-personal-information/" target="_blank">
+National Cybersecurity Alliance – Personal Information Protection
+</a>
+</p>
+</section>
+
+<!-- SECTION 2 -->
+<section>
+<h2>2️⃣ Why You Should Enable Privacy Settings</h2>
+<p>
+Enabling privacy settings helps you:
+</p>
+<ul>
+<li>✔ Control who sees your posts</li>
+<li>✔ Protect personal information from strangers</li>
+<li>✔ Reduce risk of identity theft</li>
+<li>✔ Avoid targeted scams and ads</li>
+<li>✔ Secure sensitive account details</li>
+</ul>
+
+<h3>📊 Diagram: Risks Without Privacy Settings</h3>
+<img src="https://images.unsplash.com/photo-1591696205602-2f950c417cb9" alt="Privacy Risks Diagram">
+
+<h3>🎥 Video Guide</h3>
+<iframe src="https://www.youtube.com/embed/Wd4mN6p7pXI" allowfullscreen></iframe>
+
+<h3>🔗 Learn More</h3>
+<p>
+Visit:
+<a href="https://www.consumer.ftc.gov/articles/how-keep-your-personal-information-secure" target="_blank">
+FTC – Keep Your Personal Info Secure
+</a>
+</p>
+</section>
+
+<!-- SECTION 3 -->
+<section>
+<h2>3️⃣ Tips for Setting Up Privacy</h2>
+<ul>
+<li>✔ Limit public visibility of your posts and profile</li>
+<li>✔ Turn off location sharing</li>
+<li>✔ Review app permissions regularly</li>
+<li>✔ Use strong passwords and 2FA</li>
+<li>✔ Be careful what you share online</li>
+</ul>
+
+<h3>📊 Diagram: Privacy Settings Checklist</h3>
+<img src="https://images.unsplash.com/photo-1605902711622-cfb43c4433eb" alt="Privacy Checklist Diagram">
+
+<h3>🎥 Video Tutorial</h3>
+<iframe src="https://www.youtube.com/embed/7QXr8-r-xZ8" allowfullscreen></iframe>
+
+<h3>🔗 Learn More</h3>
+<p>
+Visit:
+<a href="https://www.cybersafe.org/guide/privacy-settings" target="_blank">
+CyberSafe – Privacy Settings Guide
+</a>
+</p>
+</section>
+<!-- QUIZ -->
+<section class="quiz">
+<h2>📝 Practice Quiz</h2>
+
+<div id="quiz-container"></div>
+
+<button id="submit-quiz">Submit Answers</button>
+
+<h3 id="result"></h3>
+</section>
+
+<style>
+.correct{
+    color:green;
+    font-weight:bold;
+}
+.wrong{
+    color:red;
+    font-weight:bold;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  const quizData = [
+    { question: "1. What do privacy settings allow you to control?", options:["Only passwords","Who sees your personal info and posts","Only app notifications"], answer:1 },
+    { question: "2. Should you turn off location sharing to protect privacy?", options:["Yes","No","Only for games"], answer:0 },
+    { question: "3. Why should you regularly review app permissions?", options:["To get more ads","To increase storage","To protect personal information"], answer:2 },
+    { question: "4. Which setting controls who can see your social media posts?", options:["Privacy settings","Battery settings","Display settings"], answer:0 },
+    { question: "5. Why should you avoid sharing personal details publicly?", options:["Hackers may misuse them","To slow the internet","To improve battery life"], answer:0 },
+    { question: "6. What type of data should be kept private online?", options:["Home address","Phone number","Both A and B"], answer:2 },
+    { question: "7. What is location tracking?", options:["Tracking your device location","Tracking your internet speed","Tracking your downloads"], answer:0 },
+    { question: "8. Which is a good privacy practice?", options:["Using public profiles","Checking privacy settings regularly","Sharing passwords"], answer:1 },
+    { question: "9. Why should you limit app permissions?", options:["To prevent apps from accessing unnecessary data","To speed up charging","To increase screen brightness"], answer:0 },
+    { question: "10. What can happen if privacy settings are ignored?", options:["Data leaks","Faster internet","More storage"], answer:0 }
+  ];
+
+  const quizContainer = document.getElementById("quiz-container");
+
+  // Render quiz
+  quizData.forEach((q,index)=>{
+    const qDiv = document.createElement("div");
+    qDiv.classList.add("question");
+
+    let optionsHTML = "";
+
+    q.options.forEach((option,i)=>{
+      optionsHTML += `<label><input type="radio" name="question${index}" value="${i}"> ${option}</label><br>`;
+    });
+
+    qDiv.innerHTML = `<p><b>${q.question}</b></p>${optionsHTML}<br>`;
+    quizContainer.appendChild(qDiv);
+  });
+
+  // Attach submit listener
+  document.getElementById("submit-quiz").addEventListener("click", ()=>{
+
+    let score = 0;
+
+    quizData.forEach((q,index)=>{
+      const selected = document.querySelector(`input[name="question${index}"]:checked`);
+      const options = document.getElementsByName(`question${index}`);
+
+      options.forEach((opt,i)=>{
+        const label = opt.parentElement;
+        label.classList.remove("correct","wrong");
+
+        if(i === q.answer) label.classList.add("correct");
+        if(opt.checked && i !== q.answer) label.classList.add("wrong");
+      });
+
+      if(selected && parseInt(selected.value) === q.answer){
+        score++;
+      }
+    });
+
+    document.getElementById("result").innerHTML =
+      "Your Score: " + score + " / " + quizData.length;
+
+  });
+
+});
+</script>
+
+
+<footer>
+<p>© 2026 Cyber Security Awareness | Protect Your Privacy Online 🔒</p>
+</footer>
+
+</body>
+</html>

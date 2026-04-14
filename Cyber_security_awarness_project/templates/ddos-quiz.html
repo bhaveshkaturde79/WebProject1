@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Security Quiz</title>
+<style>
+body {
+    background:#0f172a;
+    font-family: Arial, sans-serif;
+    color:#e5e7eb;
+    margin:0;
+    padding:0;
+}
+.container {
+    width:70%;
+    margin:30px auto;
+    background:#020617;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+h1 {
+    text-align:center;
+    color:#38bdf8;
+    margin-bottom:20px;
+}
+.question {
+    margin-bottom:20px;
+    padding:15px 20px;
+    border-radius:12px;
+    background: rgba(255,255,255,0.05);
+}
+.question label {
+    display:block;
+    margin:8px 0;
+    padding:8px 12px;
+    border-radius:12px;
+    cursor:pointer;
+    transition: all 0.3s ease;
+    background: rgba(255,255,255,0.05);
+}
+.question label:hover {
+    background: rgba(56,189,248,0.2);
+}
+input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+.correct {
+    background-color: #a0e6a0 !important;
+    color: #0b3d0b;
+    font-weight: 600;
+}
+.wrong {
+    background-color: #f7a0a0 !important;
+    color: #7a0b0b;
+    font-weight: 600;
+}
+button {
+    background:#38bdf8;
+    color:black;
+    padding:12px 25px;
+    font-size:1.1rem;
+    border-radius:25px;
+    border:none;
+    display:block;
+    margin:20px auto;
+    cursor:pointer;
+}
+#result {
+    margin-top:20px;
+    font-size:1.3rem;
+    text-align:center;
+    font-weight:bold;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<h1>Cyber Security Awareness Quiz</h1>
+<div id="quiz-container"></div>
+<button id="submit-quiz">Submit Quiz</button>
+<div id="result"></div>
+</div>
+
+<script>
+// 10 Cybersecurity questions
+const quizData = [
+  { question: "1. What does Phishing aim to steal?", options:["Personal information","Internet speed","Hardware devices"], answer:0 },
+  { question: "2. What is a DDoS attack?", options:["Attack using multiple systems","Virus infection","Password cracking"], answer:0 },
+  { question: "3. Which is a phishing method?", options:["Fake email","Firewall","Encryption"], answer:0 },
+  { question: "4. Which helps prevent phishing?", options:["Two-factor authentication","Sharing passwords","Clicking unknown links"], answer:0 },
+  { question: "5. What is malware?", options:["Malicious software","Useful program","Hardware tool"], answer:0 },
+  { question: "6. What is ransomware?", options:["Encrypts files and demands payment","Faster internet","Adware"], answer:0 },
+  { question: "7. How can you create strong passwords?", options:["Use letters, numbers & symbols","Use your name","Use 123456"], answer:0 },
+  { question: "8. Which attack steals login info?", options:["Keylogging","Firewall","Update"], answer:0 },
+  { question: "9. Safe browsing involves?", options:["Check URLs & HTTPS","Click all links","Ignore warnings"], answer:0 },
+  { question: "10. Two-factor authentication provides?", options:["Extra security","Faster login","Single password"], answer:0 }
+];
+
+// Render quiz
+const quizContainer = document.getElementById("quiz-container");
+quizData.forEach((q,index)=>{
+    const qDiv = document.createElement("div");
+    qDiv.classList.add("question");
+
+    let optionsHTML = "";
+    q.options.forEach((option,i)=>{
+        optionsHTML += `<label><input type="radio" name="question${index}" value="${i}"> ${option}</label>`;
+    });
+
+    qDiv.innerHTML = `<strong>${q.question}</strong><br>${optionsHTML}`;
+    quizContainer.appendChild(qDiv);
+});
+
+// Submit quiz
+document.getElementById("submit-quiz").addEventListener("click",()=>{
+    let score = 0;
+    quizData.forEach((q,index)=>{
+        const options = document.getElementsByName(`question${index}`);
+        options.forEach((opt,i)=>{
+            const label = opt.parentElement;
+            label.classList.remove("correct","wrong");
+            if(i===q.answer) label.classList.add("correct");
+            if(opt.checked && i!==q.answer) label.classList.add("wrong");
+        });
+        const selected = document.querySelector(`input[name="question${index}"]:checked`);
+        if(selected && parseInt(selected.value)===q.answer) score++;
+    });
+    document.getElementById("result").textContent = `Your Score: ${score} / ${quizData.length}`;
+    window.scrollTo({top: document.getElementById("result").offsetTop-50, behavior:'smooth'});
+});
+</script>
+
+</body>
+</html>

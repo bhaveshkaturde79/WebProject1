@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BigBasket Data Breach 2020 – Security Awareness</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eef2f5;
+    line-height: 1.6;
+}
+header {
+    background: #1a237e;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+section {
+    max-width: 900px;
+    margin: 30px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+h2 {
+    color: #1a237e;
+}
+img {
+    width: 100%;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+iframe {
+    width: 100%;
+    height: 400px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+a {
+    color: #0d47a1;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.quiz {
+    background: #e8eaf6;
+    padding: 20px;
+    border-radius: 8px;
+}
+button {
+    padding: 10px 18px;
+    background: #0d47a1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background: #08306b;
+}
+footer {
+    text-align: center;
+    padding: 18px;
+    background: #1a237e;
+    color: white;
+}
+</style>
+
+<script>
+function checkQuiz() {
+    let score = 0;
+    if(document.querySelector('input[name="q1"]:checked')?.value === "b") score++;
+    if(document.querySelector('input[name="q2"]:checked')?.value === "b") score++;
+    if(document.querySelector('input[name="q3"]:checked')?.value === "a") score++;
+
+    document.getElementById("result").innerText = "Your Score: " + score + "/3";
+}
+</script>
+
+</head>
+<body>
+
+<header>
+<h1>📊 BigBasket Data Breach (2020)</h1>
+<p>A Cybersecurity Awareness Guide</p>
+</header>
+
+<!-- WHAT HAPPENED -->
+<section>
+<h2>🔍 What Happened in the BigBasket Breach?</h2>
+<p>
+In October–November 2020, online grocery platform BigBasket experienced a major data breach when a large portion of its user database was accessed by unauthorized actors and put on the dark web for sale. The breach affected around <b>20 million (2 crore) users</b>. :contentReference[oaicite:0]{index=0}
+</p>
+
+<h3>📊 Diagram: Data Breach Concept</h3>
+<img src="https://images.unsplash.com/photo-1581093458410-84bb4d7edaff" alt="Data Breach Concept Diagram">
+
+<h3>🎥 News Coverage</h3>
+<iframe src="https://www.youtube.com/embed/RgyjDXAK1u8" allowfullscreen></iframe>
+
+<h3>🔗 Related Resource</h3>
+<p>
+Learn more about data breaches and what they reveal at 
+<a href="https://en.wikipedia.org/wiki/Data_breaches_in_India" target="_blank">
+Wikipedia – Data Breaches in India
+</a>. :contentReference[oaicite:1]{index=1}
+</p>
+</section>
+
+<!-- DETAILS OF BREACHED DATA -->
+<section>
+<h2>📂 What Data Was Compromised?</h2>
+<p>
+According to security researchers monitoring the dark web:
+</p>
+<ul>
+<li>Names and email addresses</li>
+<li>Phone numbers</li>
+<li>Hashed passwords (with possible weak hashing) </li>
+<li>PINs and login IP addresses</li>
+<li>Delivery addresses, dates of birth and location data :contentReference[oaicite:2]{index=2}</li>
+</ul>
+
+<p>
+BigBasket stated that it <b>does not store financial data</b> such as credit card or debit card numbers; this data remained secure per company claims. :contentReference[oaicite:3]{index=3}
+</p>
+
+<h3>📊 Diagram: Types of Personal Data</h3>
+<img src="https://images.unsplash.com/photo-1581092580494-36a0bb8448fa" alt="Personal Data Diagram">
+</section>
+
+<!-- IMPACT AND RISKS -->
+<section>
+<h2>⚠️ Why This Breach Matters</h2>
+<p>
+A breach of personal information like this increases cybersecurity risks such as:
+</p>
+<ul>
+<li>Targeted phishing or scam attempts</li>
+<li>Account takeover if reused passwords exist</li>
+<li>Spam calls and unwanted contact</li>
+<li>Data sold on underground marketplaces</li>
+</ul>
+
+<h3>🔗 Additional Reading</h3>
+<p>
+Read about how large data leaks can impact users at 
+<a href="https://staysafeonline.org" target="_blank">StaySafeOnline.org</a>.
+</p>
+</section>
+
+<!-- PROTECTION TIPS -->
+<section>
+<h2>🛡️ How Users Can Protect Themselves</h2>
+<ul>
+<li>✔ Change passwords on platforms affected by breaches</li>
+<li>✔ Use unique passwords for every service</li>
+<li>✔ Enable two-factor authentication</li>
+<li>✔ Monitor email and banking for unusual activity</li>
+<li>✔ Consider a password manager to create and store secure passwords</li>
+</ul>
+</section>
+<!-- QUIZ -->
+<section class="quiz">
+<h2>📝 BigBasket Data Breach Quiz</h2>
+
+<div id="quiz-container"></div>
+
+<button id="submit-quiz">Submit Answers</button>
+
+<h3 id="result"></h3>
+
+<style>
+.correct {
+    color: green;
+    font-weight: bold;
+}
+.wrong {
+    color: red;
+    font-weight: bold;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  const quizData = [
+    { question: "1. Approximately how many BigBasket users were affected?", options:["1 million","20 million","100 million"], answer:2 },
+    { question: "2. Which type of data was NOT compromised?", options:["Email addresses","Credit card numbers","Phone numbers"], answer:1 },
+    { question: "3. What is a good protection step after a data breach?", options:["Change passwords","Ignore it","Share passwords with friends"], answer:0 },
+    { question: "4. Who is responsible for alerting users about breaches?", options:["Company affected","Competitors","Media only"], answer:0 },
+    { question: "5. What should you do if your account is compromised?", options:["Report and reset password","Ignore it","Share account details"], answer:0 },
+    { question: "6. Why are strong passwords important?", options:["To protect personal data","To get faster delivery","To save money"], answer:0 },
+    { question: "7. Which of these is a sign of phishing emails after a breach?", options:["Suspicious links","Friendly greetings","Normal emails"], answer:0 },
+    { question: "8. How often should you change passwords after a breach?", options:["Immediately","After a year","Never"], answer:0 },
+    { question: "9. Using two-factor authentication helps to:", options:["Prevent unauthorized access","Increase storage","Speed up delivery"], answer:0 },
+    { question: "10. What should you do with suspicious messages after a breach?", options:["Report them","Forward to friends","Delete without caution"], answer:0 }
+  ];
+
+  const quizContainer = document.getElementById("quiz-container");
+
+  // Render quiz
+  quizData.forEach((q,index)=>{
+    const qDiv = document.createElement("div");
+    qDiv.classList.add("question");
+
+    let optionsHTML = "";
+    q.options.forEach((option,i)=>{
+      optionsHTML += `<label><input type="radio" name="question${index}" value="${i}"> ${option}</label><br>`;
+    });
+
+    qDiv.innerHTML = `<p><b>${q.question}</b></p>${optionsHTML}<br>`;
+    quizContainer.appendChild(qDiv);
+  });
+
+  // Submit quiz
+  document.getElementById("submit-quiz").addEventListener("click", ()=>{
+    let score = 0;
+
+    quizData.forEach((q,index)=>{
+      const selected = document.querySelector(`input[name="question${index}"]:checked`);
+      const options = document.getElementsByName(`question${index}`);
+
+      options.forEach((opt,i)=>{
+        const label = opt.parentElement;
+        label.classList.remove("correct","wrong");
+
+        if(i === q.answer) label.classList.add("correct");
+        if(opt.checked && i !== q.answer) label.classList.add("wrong");
+      });
+
+      if(selected && parseInt(selected.value) === q.answer){
+        score++;
+      }
+    });
+
+    document.getElementById("result").innerHTML =
+      "Your Score: " + score + " / " + quizData.length;
+
+  });
+
+});
+</script>
+
+<footer>
+<p>© 2026 Cyber Security Awareness | Learn & Stay Safe Online</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background style */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0b132b, #1c2541, #3a506b);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container for form */
+.container {
+    width: 100%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    padding: 30px 40px;
+}
+
+/* Heading styles */
+h2 {
+    text-align: center;
+    color: #00d4ff;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+h3 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+/* Input fields */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    color: #fff;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 12px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-size: 15px;
+}
+
+/* Button styling */
+.btn {
+    width: 100%;
+    background: #00d4ff;
+    color: #000;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: #00aaff;
+    color: #fff;
+}
+
+/* Login link */
+.login-link {
+    text-align: center;
+    margin-top: 15px;
+    color: #fff;
+}
+
+.login-link a {
+    color: #00d4ff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cyber Security Awareness</title>
+    <style>
+        /* ===== Page Styles ===== */
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #e0f7ff; /* light sky blue */
+            color: #020617;
+        }
+
+        header {
+            background: #0288d1;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        nav {
+            background: #38bdf8;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #020617;
+        }
+
+        .container {
+            padding: 40px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #0288d1;
+        }
+
+        ul {
+            line-height: 1.8;
+        }
+
+        footer {
+            background: #0288d1;
+            text-align: center;
+            padding: 15px;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* ===== Floating Report Button ===== */
+        .floating-report {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #0288d1;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+
+        .floating-report:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 10px #0288d1; }
+            50% { box-shadow: 0 0 25px #0288d1; }
+            100% { box-shadow: 0 0 10px #0288d1; }
+        }
+
+        /* ===== Modal Styles ===== */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 999; 
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.6); 
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            margin: 10% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            text-align: left;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            animation: slideIn 0.5s ease forwards;
+        }
+
+        .close {
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .modal input, .modal textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        .modal button {
+            background: #0288d1;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .modal button:hover { background: #026aa7; }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateY(-50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    Cyber Security Awareness
+</header>
+
+<nav>
+    <a href="/awareness">Home</a>
+    <a href="/cybersecurity">Cybersecurity</a>
+    <a href="/attacks">Cyber Attacks</a>
+    <a href="/safe-browsing">Safe Browsing</a>
+    <a href="/phishing">Detect Phishing</a>
+    <a href="/social-media">Social Media Safety</a>
+    <a href="/real-attacks">Real Attacks</a>
+    <a href="/report">Report Issue</a>
+</nav>
+
+<div class="container">
+    <h2>Important Cybersecurity Topics</h2>
+    <ul>
+        <li>What is Cybersecurity?</li>
+        <li>Types of Cyber Attacks</li>
+        <li>Safe Browsing Practices</li>
+        <li>How to Detect Phishing</li>
+        <li>How to Secure Social Media</li>
+        <li>Protecting Personal Information</li>
+        <li>Real-world Examples of Cyber Attacks</li>
+        <li>Two-Factor Authentication & Password Safety</li>
+        <li>Recognizing Malware & Ransomware</li>
+        <li>Social Engineering Awareness</li>
+    </ul>
+</div>
+
+<!-- Floating Report Button -->
+<button id="reportBtn" class="floating-report">Report Issue</button>
+
+<!-- Modal -->
+<div id="reportModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Report an Issue</h2>
+    <form action="/report" method="POST">
+      <label for="name">Your Name:</label><br>
+      <input type="text" id="name" name="name" required><br><br>
+
+      <label for="email">Your Email:</label><br>
+      <input type="email" id="email" name="email" required><br><br>
+
+      <label for="message">Issue Details:</label><br>
+      <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+      <button type="submit">Submit Report</button>
+    </form>
+  </div>
+</div>
+
+<footer>
+    © 2026 Cyber Security Awareness website
+</footer>
+
+<script>
+    // Modal JS
+    const modal = document.getElementById("reportModal");
+    const btn = document.getElementById("reportBtn");
+    const span = document.getElementsByClassName("close")[0];
+
+    btn.onclick = () => modal.style.display = "block";
+    span.onclick = () => modal.style.display = "none";
+    window.onclick = (event) => {
+        if(event.target == modal) modal.style.display = "none";
+    }
+</script>
+
+</body>
+</html>

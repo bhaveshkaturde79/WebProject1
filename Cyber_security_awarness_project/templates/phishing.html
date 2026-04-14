@@ -1,0 +1,426 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Cybersecurity Warning Signs</title>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+    
+   
+</head>
+<style>/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #d9e9ff 0%, #ffffff 100%);
+  color: #172b4d;
+  min-height: 100vh;
+  padding: 20px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 40px 20px 60px;
+  font-weight: 700;
+  font-size: 3rem;
+  color: #0d3b66;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 5px rgba(13,59,102,0.15);
+}
+
+/* Navigation bar */
+nav {
+  max-width: 960px;
+  margin: 0 auto 40px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  background: rgba(255 255 255 / 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 14px 20px;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(13,59,102,0.15);
+}
+
+nav a {
+  color: #0d3b66;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  background: rgba(255 255 255 / 0.6);
+  box-shadow: 0 4px 6px rgba(13,59,102,0.1);
+  transition: all 0.3s ease;
+  border: 1.5px solid transparent;
+}
+
+nav a:hover,
+nav a:focus {
+  background: #0d3b66;
+  color: white;
+  box-shadow: 0 8px 15px rgba(13,59,102,0.35);
+  border-color: #0d3b66;
+  outline: none;
+}
+
+/* Fixed navbar buttons */
+.navbar {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 12px;
+  z-index: 100;
+}
+
+.logout-btn,
+.admin-btn {
+  padding: 10px 18px;
+  font-weight: 600;
+  border-radius: 25px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+  transition: background 0.3s ease;
+  user-select: none;
+  font-size: 0.9rem;
+  background-clip: padding-box;
+}
+
+.logout-btn {
+  background: #ef476f;
+}
+
+.logout-btn:hover {
+  background: #d6456f;
+}
+
+.admin-btn {
+  background: #118ab2;
+}
+
+.admin-btn:hover {
+  background: #0a6d93;
+}
+
+/* Main content container */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  background: rgba(255 255 255 / 0.55);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-radius: 20px;
+  padding: 30px 40px;
+  box-shadow: 0 12px 25px rgb(13 59 102 / 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.container:hover {
+  box-shadow: 0 20px 40px rgb(13 59 102 / 0.2);
+}
+
+/* Page title */
+.container h1 {
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #073763;
+  letter-spacing: 1.5px;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgb(0 0 0 / 0.1);
+  animation: fadeInDown 1s ease forwards;
+}
+
+/* Cards */
+.card {
+  background: rgba(255 255 255 / 0.8);
+  border-radius: 20px;
+  padding: 28px 24px 32px;
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.08);
+  border: 1.5px solid transparent;
+  transition: all 0.35s ease;
+  margin-bottom: 30px;
+}
+
+.card:hover {
+  box-shadow: 0 16px 40px rgb(13 59 102 / 0.15);
+  border-color: #118ab2;
+  background: rgba(255 255 255 / 0.95);
+  transform: translateY(-8px);
+  cursor: pointer;
+}
+
+.card h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #073763;
+  cursor: pointer;
+  user-select: none;
+  margin-bottom: 15px;
+}
+
+/* Hidden content inside cards */
+.card .content {
+  display: none;
+}
+
+.card .content p {
+  color: #375a7f;
+  line-height: 1.6;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.card ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+  color: #375a7f;
+}
+
+/* Tips */
+.card .tip {
+  color: #ef476f;
+  font-weight: 700;
+  font-size: 18px;
+  margin-top: 12px;
+}
+
+/* Images and videos */
+img,
+iframe {
+  width: 100%;
+  border-radius: 16px;
+  margin: 20px 0;
+  box-shadow: 0 6px 20px rgb(17 138 178 / 0.3);
+}
+
+/* Buttons */
+button {
+  background: #118ab2;
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 24px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  margin-top: 18px;
+  box-shadow: 0 6px 15px rgb(17 138 178 / 0.6);
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+button:hover,
+button:focus {
+  background: #0a6d93;
+  outline: none;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 25px 15px;
+  margin-top: 50px;
+  font-size: 14px;
+  color: #073763;
+}
+
+/* Animation */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}</style>
+<body>
+<header><h1>How to Detect Phishing</h1></header>
+
+<nav>
+    <a href="/awareness">Home</a>
+    <a href="/cybersecurity">cybersecurity</a>
+    <a href="/attacks">Cyber Attacks</a>
+    <a href="/safe-browsing">Safe Browsing</a>
+    <a href="/phishing">Detect Phishing</a>
+    <a href="/social-media">Social Media Safety</a>
+    <a href="/real-attacks">Real Attacks</a>
+    <a href="/aiphishing">AI-Detection</a>
+</nav>
+
+<nav class="navbar">
+     <a href="/report" class="admin-btn">Report Issue</a>
+    <a href="/admin-login" class="admin-btn">Admin</a>
+    <a href="/awareness" class="logout-btn">Logout</a>
+</nav>
+<div class="container">
+    <h1>Interactive Cybersecurity Warning Signs</h1>
+
+    <!-- 1 Suspicious Emails -->
+    <div class="card">
+        <h2 onclick="toggleContent(0)">1. Suspicious Emails</h2>
+        <div class="content">
+            <br>
+
+            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3"
+alt="Phishing email concept image" width="100%">
+
+            <p>
+                Suspicious emails are fake messages designed to trick users into
+                sharing personal or financial information.
+            </p>
+
+            <ul>
+                <li>Unknown or fake sender address</li>
+                <li>Spelling and grammar mistakes</li>
+                <li>Requests for passwords or bank details</li>
+                <li>Suspicious links or attachments</li>
+            </ul>
+
+            <iframe width="100%" height="315"
+            src="https://www.youtube.com/embed/Y7zNlEMDmI4"
+            title="Phishing Email Awareness"
+            frameborder="0" allowfullscreen></iframe>
+
+            <div class="tip"><strong>Tip:</strong> Never click unknown links.</div>
+
+            <button onclick="showAlert('emails')">What should I do?</button>
+        </div>
+    </div>
+
+
+    <!-- 2 Fake Website URLs -->
+    <div class="card">
+        <h2 onclick="toggleContent(1)">2. Fake Website URLs</h2>
+        <div class="content">
+
+            <img src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87"
+alt="Fake website cybersecurity concept" width="100%">
+
+            <p>
+                Fake websites look real but are created to steal your login
+                credentials and personal data.
+            </p>
+
+            <ul>
+                <li>Misspelled website addresses</li>
+                <li>No HTTPS security lock</li>
+                <li>Poor design or broken pages</li>
+                <li>Forms asking for sensitive information</li>
+            </ul>
+
+            <iframe width="100%" height="315"
+            src="https://www.youtube.com/embed/3gpOM9VQxvE"
+            title="Fake Website Scams"
+            frameborder="0" allowfullscreen></iframe>
+
+            <div class="tip"><strong>Tip:</strong> Always check the URL carefully.</div>
+
+            <button onclick="showAlert('urls')">What should I do?</button>
+        </div>
+    </div>
+
+
+    <!-- 3 Urgent Payment Requests -->
+    <div class="card">
+        <h2 onclick="toggleContent(2)">3. Urgent Payment Requests</h2>
+        <div class="content">
+
+            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d"
+alt="Online payment scam concept" width="100%">
+
+            <p>
+                Scammers create urgency to force quick payments without verification.
+            </p>
+
+            <ul>
+                <li>Threats of account suspension</li>
+                <li>Requests for gift cards or cryptocurrency</li>
+                <li>Unexpected invoices or fines</li>
+                <li>Pressure to pay immediately</li>
+            </ul>
+
+            <iframe width="100%" height="315"
+            src="https://www.youtube.com/embed/4qJ9XK1F0hA"
+            title="Payment Scam Awareness"
+            frameborder="0" allowfullscreen></iframe>
+
+            <div class="tip"><strong>Tip:</strong> Legitimate companies do not rush payments.</div>
+
+            <button onclick="showAlert('payment')">What should I do?</button>
+        </div>
+    </div>
+
+
+    <!-- 4 Unexpected Login Alerts -->
+    <div class="card">
+        <h2 onclick="toggleContent(3)">4. Unexpected Login Alerts</h2>
+        <div class="content">
+
+            <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7"
+alt="Account security alert concept" width="100%">
+
+            <p>
+                Unexpected login alerts may indicate unauthorized access attempts.
+            </p>
+
+            <ul>
+                <li>Login alerts from unknown locations</li>
+                <li>Password reset emails you didn’t request</li>
+                <li>Multiple failed login attempts</li>
+                <li>Alerts from unfamiliar devices</li>
+            </ul>
+
+            <iframe width="100%" height="315"
+            src="https://www.youtube.com/embed/K-8Y6aJ0a7I"
+            title="Account Security Alerts"
+            frameborder="0" allowfullscreen></iframe>
+
+            <div class="tip"><strong>Tip:</strong> Change your password immediately.</div>
+
+            <button onclick="showAlert('login')">What should I do?</button>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function toggleContent(index) {
+        const contents = document.getElementsByClassName("content");
+        contents[index].style.display =
+            contents[index].style.display === "block" ? "none" : "block";
+    }
+
+    function showAlert(type) {
+        if (type === "emails") {
+            alert("Do not reply. Verify the sender and report the email.");
+            window.open("https://consumer.ftc.gov/articles/how-recognize-and-avoid-phishing-scams", "_blank");
+        } else if (type === "urls") {
+            alert("Close the website and check the correct URL.");
+            window.open("https://staysafeonline.org/resources/spotting-fake-websites/", "_blank");
+        } else if (type === "payment") {
+            alert("Stop and verify with the organization directly.");
+            window.open("https://consumer.ftc.gov/articles/payment-scams", "_blank");
+        } else if (type === "login") {
+            alert("Change your password and enable two-factor authentication.");
+            window.open("https://support.google.com/accounts/answer/6294825", "_blank");
+        }
+    }
+</script>
+
+</body>
+</html>

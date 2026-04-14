@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <script>
+function searchContent() {
+    let input = document.getElementById("searchInput").value.toLowerCase();
+    let bodyText = document.body.innerHTML;
+
+    // Remove old highlights
+    bodyText = bodyText.replace(/<mark>/g, "").replace(/<\/mark>/g, "");
+
+    if (input === "") {
+        alert("Please enter a keyword to search");
+        return;
+    }
+
+    // Highlight searched word
+    let regex = new RegExp(input, "gi");
+    document.body.innerHTML = bodyText.replace(regex, match => `<mark>${match}</mark>`);
+
+    // Scroll to first match
+    let firstMatch = document.querySelector("mark");
+    if (firstMatch) {
+        firstMatch.scrollIntoView({ behavior: "smooth" });
+    } else {
+        alert("No result found!");
+    }
+}
+</script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0f172a;
+            color: #ffffff;
+        }
+
+        header {
+            background-color: #020617;
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+            color: #38bdf8;
+        }
+
+        .container {
+            width: 85%;
+            margin: 30px auto;
+            background-color: #020617;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #38bdf8;
+            margin-top: 30px;
+        }
+
+        p {
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .tip-box {
+            background: #020617;
+            border-left: 5px solid #38bdf8;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        mark {
+    background-color: yellow;
+    color: black;
+    padding: 2px;
+}
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #020617;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #111827;
+            color: white;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #1f2937;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            color: #22d3ee;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        img {
+            width: 100%;
+            max-width: 500px;
+            display: block;
+            margin: 15px auto;
+            border-radius: 10px;
+        }
+
+        iframe {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+
+        .highlight {
+            color: #f43f5e;
+            font-weight: bold;
+        }
+        .navbar {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+}
+
+.logout-btn {
+    text-decoration: none;
+    background-color: red;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+        nav {
+            background: black;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 10px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            background-color: #002b5c;
+            padding: 8px 15px;
+            border-radius: 6px;
+            border: 1px solid #00cfff;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #00cfff;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <a href="/awareness" class="logout-btn">Logout</a>
+</nav>
+<nav>
+    <a href="/homepage">Home</a>
+    <a href="/attacks">Cyber Attacks</a>
+    <a href="/safe-browsing">Safe Browsing</a>
+    <a href="/ransomware-quiz">Start Quiz</a>
+</nav>
+
+<div style="text-align:center; margin:20px;">
+    <input type="text" id="searchInput" placeholder="Search Ransomware topic..."
+           style="width:60%; padding:10px; border-radius:5px; border:none;">
+    <button onclick="searchContent()"
+            style="padding:10px 20px; margin-left:10px; background:#38bdf8; border:none; border-radius:5px; font-weight:bold;">
+        Search
+    </button>
+</div>
+<header>
+    <h1>Ransomware Attacks Awareness</h1>
+    <p>Don't Let Hackers Lock Your Data</p>
+</header>
+
+<div class="container">
+
+    <!-- What is Ransomware -->
+    <div class="section">
+        <h2>What is Ransomware?</h2>
+        <p>
+            <span class="highlight">Ransomware</span> is a type of malicious software 
+            that encrypts your files or locks your system and demands payment 
+            (ransom) to restore access.
+        </p>
+        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3"
+             alt="Ransomware attack concept image">
+    </div>
+
+    <!-- How it Works -->
+    <div class="section">
+        <h2>How Ransomware Works</h2>
+        <ul>
+            <li>User clicks a malicious link or attachment</li>
+            <li>Malware installs silently</li>
+            <li>Files get encrypted</li>
+            <li>Victim receives ransom demand message</li>
+        </ul>
+        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b"
+             alt="Encrypted files ransomware concept">
+    </div>
+
+    <!-- Types -->
+    <div class="section">
+        <h2>Types of Ransomware</h2>
+
+        <h3>1. Crypto Ransomware</h3>
+        <p>Encrypts personal files like documents, photos, and videos.</p>
+
+        <h3>2. Locker Ransomware</h3>
+        <p>Locks the entire system so users cannot access their device.</p>
+
+        <h3>3. Double Extortion</h3>
+        <p>Attackers steal data and threaten to publish it if ransom is not paid.</p>
+
+        <img src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72"
+             alt="Cyber hacker ransomware concept">
+    </div>
+
+    <!-- Prevention -->
+    <div class="section">
+        <h2>How to Protect Yourself</h2>
+        <ul>
+            <li>Back up your data regularly</li>
+            <li>Do not open suspicious emails or attachments</li>
+            <li>Keep your software and OS updated</li>
+            <li>Use strong passwords and 2FA</li>
+            <li>Install trusted antivirus software</li>
+        </ul>
+    </div>
+
+    <!-- Video -->
+    <div class="section">
+        <h2>Ransomware Awareness Video</h2>
+
+        <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/6uSVVCmOH5w"
+            title="Ransomware Awareness Video"
+            frameborder="0"
+            allowfullscreen>
+        </iframe>
+    </div>
+<a href="https://en.wikipedia.org/wiki/Phishing">https://en.wikipedia.org/wiki/Phishing</a><br>
+    <a href="/ransomware-quiz"><button>Start Quiz</button></a>
+</div>
+
+<footer>
+    <p>© 2026 Ransomware Awareness | Stay Secure & Backup Your Data</p>
+</footer>
+
+</body>
+</html>

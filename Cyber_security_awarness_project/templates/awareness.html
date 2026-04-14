@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <marquee scrollamount="10" style="color: rgb(4, 64, 123); font-size: 30px; " >Welcome to my website!</marquee>
+<meta charset="UTF-8">
+<title>Cyber Security Awareness</title>
+
+<style>
+/* Body and page background */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #e0f7ff;  /* light sky blue */
+    color: #1f2937;       /* dark text for readability */
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    background: oklab(55.371% -0.05706 -0.06718 / 0.936); /* bright sky blue */
+    padding: 20px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 900;
+    color: white;
+    letter-spacing: 1px;
+}
+
+/* Hero section */
+.hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-box {
+    background: #ffffff; /* white box */
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    max-width: 700px;
+}
+
+.hero-box h1 {
+    font-size: 3rem;
+    color: #21526c;  /* deep sky blue text */
+    margin-bottom: 20px;
+}
+
+.hero-box p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    color: #1f2937; /* dark gray text */
+}
+
+.hero-box button {
+    background: #1b5d79; 
+    padding: 15px 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0 6px 15px rgba(56, 223, 248, 0.3);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-box button:hover {
+    background-color: #0f5c86;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Cards */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 50px 30px;
+}
+
+.card {
+    background: #ffffff; /* white card */
+    width: 260px;
+    padding: 25px 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+    color: #528faf;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.card p, .card ul {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #1f2937;
+    margin: 0 auto;
+    max-width: 220px;
+    text-align: left;
+}
+
+.card ul {
+    padding-left: 18px;
+    margin-top: 10px;
+}
+
+.card ul li {
+    margin-bottom: 8px;
+}
+
+/* Footer */
+footer {
+    background: #266986;
+    text-align: center;
+    padding: 20px 10px;
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .cards {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 15px;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .hero-box h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-box p {
+        font-size: 1.1rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo" >Cyber Secure AI</div>
+    
+</header>
+
+<div class="hero">
+    <div class="hero-box">
+        <h1>Cyber Security Awareness using AI</h1>
+        <p>Learn how hackers attack and how to protect yourself using modern AI-based security knowledge.</p>
+        <button onclick="location.href='/homepage'">Get Started</button>
+    </div>
+</div>
+
+<div class="cards">
+    <div class="card">
+        <h3>Phishing</h3>
+        <p>Learn how fake emails and websites steal your data.</p>
+    </div>
+    <div class="card">
+        <h3>Malware</h3>
+        <p>Understand viruses, trojans, spyware and worms.</p>
+    </div>
+    <div class="card">
+        <h3>Ransomware</h3>
+        <p>Know how files are locked and money is demanded.</p>
+    </div>
+    <div class="card">
+        <h3>AI Detection</h3>
+        <p>Check messages and files using artificial intelligence.</p>
+    </div>
+
+    <div class="card">
+    <h3>Content Ideas</h3>
+    <ul>
+        <li>What is Cybersecurity?</li>
+        <li>Types of Cyber Attacks</li>
+        <li>Safe Browsing Practices</li>
+        <li>How to Detect Phishing</li>
+        <li>How to Secure Social Media</li>
+        <li>Protecting Personal Information</li>
+        <li>Real-world Examples of Cyber Attacks</li>
+    </ul>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Cyber Security Awareness Project
+</footer>
+
+</body>
+</html>
+
+
+

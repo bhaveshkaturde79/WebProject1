@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ransomware Quiz - 10 Questions</title>
+<style>
+body {
+    background: #0f172a;
+    font-family: Arial, sans-serif;
+    color: #e5e7eb;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 70%;
+    margin: 30px auto;
+    background: #020617;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+h1 {
+    text-align: center;
+    color: #38bdf8;
+    margin-bottom: 20px;
+}
+.quiz-question {
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+    padding: 15px 20px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 15px;
+}
+.quiz-question label {
+    display: block;
+    margin: 8px 0;
+    padding: 8px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(255,255,255,0.05);
+}
+.quiz-question label:hover {
+    background: rgba(56,189,248,0.2);
+}
+input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+.correct {
+    background-color: #a0e6a0 !important;
+    color: #0b3d0b;
+    font-weight: 600;
+}
+.wrong {
+    background-color: #f7a0a0 !important;
+    color: #7a0b0b;
+    font-weight: 600;
+}
+button {
+    background: #38bdf8;
+    color: black;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    border: none;
+    display: block;
+    margin: 20px auto;
+    cursor: pointer;
+}
+#result {
+    margin-top: 20px;
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<h1>Ransomware Quiz</h1>
+
+<div id="quiz-container"></div>
+
+<button id="submit-quiz">Submit Quiz</button>
+<div id="result"></div>
+</div>
+
+<script>
+// 10-question quiz data
+const quizData = [
+  {
+    question: "1. What does ransomware do?",
+    options: ["Speeds up computer", "Encrypts files and demands payment", "Deletes antivirus", "Crashes internet"],
+    answer: 1
+  },
+  {
+    question: "2. How does ransomware usually enter?",
+    options: ["Phishing emails", "Mouse clicks", "Hardware failure", "Weather conditions"],
+    answer: 0
+  },
+  {
+    question: "3. What should you do to stay safe?",
+    options: ["Ignore updates", "Regular backups", "Disable antivirus", "Share passwords"],
+    answer: 1
+  },
+  {
+    question: "4. Ransomware mainly targets?",
+    options: ["Web browsers", "Files and data", "Video games", "Email headers"],
+    answer: 1
+  },
+  {
+    question: "5. Common ransom payment method?",
+    options: ["Cash via mail", "Cryptocurrency", "Bank cheque", "Gift card"],
+    answer: 1
+  },
+  {
+    question: "6. What type of files are usually encrypted?",
+    options: ["Temporary system files", "Personal documents & media", "Browser cookies", "Operating system files only"],
+    answer: 1
+  },
+  {
+    question: "7. How can you prevent ransomware?",
+    options: ["Open all email attachments", "Keep backups & software updated", "Click unknown links", "Disable firewall"],
+    answer: 1
+  },
+  {
+    question: "8. What is a ransomware note?",
+    options: ["A backup file", "A message demanding payment", "Virus signature", "Antivirus log"],
+    answer: 1
+  },
+  {
+    question: "9. Can antivirus prevent all ransomware?",
+    options: ["Yes, always", "No, but it helps", "Only for PDFs", "Only on mobile devices"],
+    answer: 1
+  },
+  {
+    question: "10. If infected, should you pay the ransom?",
+    options: ["Yes, immediately", "No, report & restore from backup", "Depends on the file type", "Only if small amount"],
+    answer: 1
+  }
+];
+
+// Render quiz
+const quizContainer = document.getElementById("quiz-container");
+quizData.forEach((q, index) => {
+  const qDiv = document.createElement("div");
+  qDiv.classList.add("quiz-question");
+
+  let optionsHTML = "";
+  q.options.forEach((option, i) => {
+    optionsHTML += `
+      <label>
+        <input type="radio" name="question${index}" value="${i}"> ${option}
+      </label>`;
+  });
+
+  qDiv.innerHTML = `<strong>${q.question}</strong><br>${optionsHTML}`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit quiz
+document.getElementById("submit-quiz").addEventListener("click", () => {
+  let score = 0;
+  quizData.forEach((q, index) => {
+    const options = document.getElementsByName(`question${index}`);
+    options.forEach((opt, i) => {
+      const label = opt.parentElement;
+      label.classList.remove("correct", "wrong");
+      if (i === q.answer) label.classList.add("correct");
+      if (opt.checked && i !== q.answer) label.classList.add("wrong");
+    });
+    const selected = document.querySelector(`input[name="question${index}"]:checked`);
+    if (selected && parseInt(selected.value) === q.answer) score++;
+  });
+  document.getElementById("result").textContent = `Your Score: ${score} / ${quizData.length}`;
+  window.scrollTo({ top: document.getElementById("result").offsetTop - 50, behavior: 'smooth' });
+});
+</script>
+
+</body>
+</html>

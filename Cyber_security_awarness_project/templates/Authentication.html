@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enable Two-Factor Authentication (2FA)</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f6fb;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #4a148c;
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+nav {
+    background-color: #38006b;
+    text-align: center;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section {
+    background: white;
+    margin: 20px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #4a148c;
+}
+
+img {
+    display: block;
+    margin: 20px auto;
+    width: 60%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+.video-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+iframe {
+    width: 80%;
+    max-width: 700px;
+    height: 400px;
+    border-radius: 10px;
+}
+
+ul, ol {
+    margin-left: 20px;
+}
+
+button {
+    padding: 12px 20px;
+    background: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #b71c1c;
+}
+
+footer {
+    background-color: #4a148c;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* Quiz styles */
+.quiz label.correct { color: green; font-weight: bold; }
+.quiz label.wrong { color: red; font-weight: bold; }
+.quiz button { margin-top: 15px; }
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Cybersecurity Awareness</h1>
+<p><strong>Enable Two-Factor Authentication (2FA)</strong></p>
+</header>
+
+<nav>
+<a href="#about">About</a>
+<a href="#how2fa">How 2FA Works</a>
+<a href="#types">2FA Types</a>
+<a href="#benefits">Benefits</a>
+<a href="#enable">How to Enable</a>
+<a href="#video">Video</a>
+<a href="#quiz">Quiz</a>
+</nav>
+
+<section id="about">
+<h2>📌 What is Two-Factor Authentication?</h2>
+<p>Two-Factor Authentication (2FA) is an extra layer of security used to protect online accounts. Instead of only using a password, 2FA requires a second verification method. This makes it much harder for hackers to access your account even if they know your password.</p>
+<img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1200&q=80" alt="Two factor authentication concept">
+</section>
+
+<section id="how2fa">
+<h2>🔑 How 2FA Works</h2>
+<ol>
+<li>You enter your username and password.</li>
+<li>The system asks for a second verification code.</li>
+<li>You receive a code via SMS, email, or authentication app.</li>
+<li>After entering the code, access is granted.</li>
+</ol>
+<p>This ensures that even if someone steals your password, they cannot log in without the second factor.</p>
+</section>
+
+<section id="types">
+<h2>🔐 Types of Two-Factor Authentication</h2>
+<ul>
+<li><strong>SMS OTP:</strong> One-time password sent to your mobile phone.</li>
+<li><strong>Authentication Apps:</strong> Apps like Google Authenticator generate secure codes.</li>
+<li><strong>Email Verification:</strong> Code sent to registered email.</li>
+<li><strong>Biometric Verification:</strong> Fingerprint or face recognition.</li>
+<li><strong>Hardware Tokens:</strong> Physical security key devices.</li>
+</ul>
+<img src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=1200&q=80" alt="Mobile authentication code">
+</section>
+
+<section id="benefits">
+<h2>🛡 Benefits of Enabling 2FA</h2>
+<ul>
+<li>Protects against password theft.</li>
+<li>Reduces risk of phishing attacks.</li>
+<li>Secures banking and social media accounts.</li>
+<li>Prevents unauthorized access.</li>
+<li>Improves overall cybersecurity.</li>
+</ul>
+</section>
+
+<section id="enable">
+<h2>💻 How to Enable 2FA</h2>
+<ol>
+<li>Go to your account security settings.</li>
+<li>Find "Two-Factor Authentication" or "Security Settings."</li>
+<li>Choose your preferred verification method.</li>
+<li>Verify your phone number or install an authentication app.</li>
+<li>Enter the verification code.</li>
+<li>Save backup recovery codes.</li>
+</ol>
+</section>
+
+<section id="video">
+<h2>🎥 Learn More About 2FA</h2>
+<div class="video-container">
+<iframe src="https://www.youtube.com/embed/0mvCeNsTa1g" title="Two Factor Authentication Explained" frameborder="0" allowfullscreen></iframe>
+</div>
+</section>
+
+<section>
+<h2>🚨 What Happens Without 2FA?</h2>
+<p>Without 2FA, if your password is leaked or guessed, hackers can easily access your accounts. Cybercriminals often use phishing and data breaches to steal passwords. Enabling 2FA significantly reduces this risk.</p>
+</section>
+
+<!-- QUIZ SECTION -->
+<section id="quiz" class="quiz">
+<h2>📝 Two-Factor Authentication Quiz</h2>
+<div id="quiz-container"></div>
+<button id="submit-quiz">Submit Answers</button>
+<h3 id="result"></h3>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  const quizData = [
+    { question: "1. What does 2FA require besides a password?", options:["Nothing else","A second verification method","Just a username"], answer:1 },
+    { question: "2. SMS OTP is an example of?", options:["Email verification","2FA method","Malware"], answer:1 },
+    { question: "3. Why enable 2FA?", options:["To improve internet speed","To protect accounts from hackers","To increase followers"], answer:1 },
+    { question: "4. Which of these is a 2FA method?", options:["Fingerprint recognition","Downloading apps","Browser cookies"], answer:0 },
+    { question: "5. Authentication apps generate?", options:["Temporary secure codes","Passwords","Emails"], answer:0 },
+    { question: "6. Should you share 2FA codes?", options:["Yes","No","Sometimes"], answer:1 },
+    { question: "7. 2FA reduces risk of?", options:["Phishing and unauthorized access","Faster internet","Better graphics"], answer:0 },
+    { question: "8. Hardware tokens are?", options:["Physical security keys","Fake apps","Browser extensions"], answer:0 },
+    { question: "9. Biometric verification uses?", options:["Fingerprints or face","Passwords only","IP address"], answer:0 },
+    { question: "10. What should you do with backup codes?", options:["Delete them","Store securely","Share online"], answer:1 }
+  ];
+
+  const quizContainer = document.getElementById("quiz-container");
+
+  quizData.forEach((q,index)=>{
+    const qDiv = document.createElement("div");
+    qDiv.classList.add("question");
+
+    let optionsHTML = "";
+    q.options.forEach((option,i)=>{
+      optionsHTML += `<label><input type="radio" name="question${index}" value="${i}"> ${option}</label><br>`;
+    });
+
+    qDiv.innerHTML = `<p><b>${q.question}</b></p>${optionsHTML}<br>`;
+    quizContainer.appendChild(qDiv);
+  });
+
+  document.getElementById("submit-quiz").addEventListener("click", ()=>{
+    let score = 0;
+
+    quizData.forEach((q,index)=>{
+      const selected = document.querySelector(`input[name="question${index}"]:checked`);
+      const options = document.getElementsByName(`question${index}`);
+
+      options.forEach((opt,i)=>{
+        const label = opt.parentElement;
+        label.classList.remove("correct","wrong");
+
+        if(i === q.answer) label.classList.add("correct");
+        if(opt.checked && i !== q.answer) label.classList.add("wrong");
+      });
+
+      if(selected && parseInt(selected.value) === q.answer){
+        score++;
+      }
+    });
+
+    document.getElementById("result").innerHTML =
+      "Your Score: " + score + " / " + quizData.length;
+  });
+
+});
+</script>
+</section>
+
+<footer>
+<p>© 2026 Cybersecurity Awareness Project | Stay Secure 🔐</p>
+</footer>
+
+</body>
+</html>
